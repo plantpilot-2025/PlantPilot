@@ -1,0 +1,20 @@
+{
+  "name": "plantpilot-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PlantPilot mobile/web/backend monorepo",
+  "scripts": {
+    "dev:mobile": "npm --prefix apps/mobile run start",
+    "dev:web": "npm --prefix apps/web run dev",
+    "dev:api": "npm --prefix apps/api run dev",
+    "build:web": "npm --prefix apps/web run build",
+    "build:api": "npm --prefix apps/api run build"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

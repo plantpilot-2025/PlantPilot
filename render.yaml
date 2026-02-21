@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: plantpilot-api
+    runtime: node
+    rootDir: apps/api
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: PORT
+        value: 8789
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: GAS_DIAG_URL
+        sync: false

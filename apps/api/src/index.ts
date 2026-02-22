@@ -12,6 +12,10 @@ const intakeDataFile = resolve(
   process.cwd(),
   process.env.INTAKE_DATA_FILE || ".data/intake-records.json"
 );
+const chatDataFile = resolve(
+  process.cwd(),
+  process.env.CHAT_DATA_FILE || ".data/chat-records.json"
+);
 
 app.get("/healthz", async () => ({ ok: true, service: "plantpilot-api" }));
 
@@ -30,8 +34,29 @@ type IntakeRecord = IntakePayload & {
   receivedAt: string;
 };
 
+const chatRequestSchema = z.object({
+  message: z.string().min(1).max(2000),
+  context: z
+    .object({
+      plantName: z.string().optional(),
+      roomName: z.string().optional(),
+      targetPpm: z.string().optional(),
+      targetPh: z.string().optional(),
+    })
+    .optional(),
+});
+
+type ChatRecord = {
+  id: string;
+  message: string;
+  response: string;
+  createdAt: string;
+};
+
 const intakeRecords: IntakeRecord[] = [];
+const chatRecords: ChatRecord[] = [];
 let intakeWriteChain: Promise<void> = Promise.resolve();
+let chatWriteChain: Promise<void> = Promise.resolve();
 
 async function loadIntakeRecords() {
   try {
@@ -70,6 +95,60 @@ function persistIntakeRecords() {
       app.log.error({ err }, "Failed writing intake records");
     });
   return intakeWriteChain;
+}
+
+async function loadChatRecords() {
+  try {
+    const raw = await readFile(chatDataFile, "utf8");
+    const parsed = z.array(
+      z.object({
+        id: z.string(),
+        message: z.string(),
+        response: z.string(),
+        createdAt: z.string(),
+      })
+    ).parse(JSON.parse(raw));
+
+    chatRecords.splice(0, chatRecords.length, ...parsed.slice(0, 200));
+    app.log.info(
+      { count: chatRecords.length, chatDataFile },
+      "Loaded chat records from disk"
+    );
+  } catch {
+    app.log.info({ chatDataFile }, "No chat data file yet");
+  }
+}
+
+function persistChatRecords() {
+  const snapshot = JSON.stringify(chatRecords, null, 2);
+  chatWriteChain = chatWriteChain
+    .then(async () => {
+      await mkdir(dirname(chatDataFile), { recursive: true });
+      await writeFile(chatDataFile, snapshot, "utf8");
+    })
+    .catch((err) => {
+      app.log.error({ err }, "Failed writing chat records");
+    });
+  return chatWriteChain;
+}
+
+function buildChatResponse(input: z.infer<typeof chatRequestSchema>) {
+  const message = input.message.toLowerCase();
+  const targetPpm = input.context?.targetPpm || "your target";
+  const targetPh = input.context?.targetPh || "your target";
+  const plantName = input.context?.plantName || "your plant";
+
+  if (message.includes("ppm")) {
+    return `For ${plantName}, start by stabilizing near ${targetPpm} ppm, then adjust in small increments based on new growth response over 24-48h.`;
+  }
+  if (message.includes("ph")) {
+    return `Keep pH close to ${targetPh}. If readings drift, correct gradually rather than in one large correction to avoid plant stress.`;
+  }
+  if (message.includes("flush")) {
+    return "If a flush is needed, run clean water until runoff EC/PPM drops significantly, then reintroduce nutrients at a lighter strength.";
+  }
+
+  return "Current recommendation: verify environment stability first (temp, RH, EC/PPM, pH), then change only one variable at a time and monitor for 24-48h.";
 }
 
 app.post("/v1/intake", async (request, reply) => {
@@ -112,6 +191,43 @@ app.get("/v1/intake/recent", async (request) => {
   return { ok: true, count: intakeRecords.length, items: intakeRecords.slice(0, limit) };
 });
 
+app.post("/v1/chat", async (request, reply) => {
+  const parsed = chatRequestSchema.safeParse(request.body);
+  if (!parsed.success) {
+    return reply.status(400).send({
+      ok: false,
+      error: "Invalid chat payload",
+      details: parsed.error.issues.map((issue) => ({
+        path: issue.path.join("."),
+        message: issue.message,
+      })),
+    });
+  }
+
+  const response = buildChatResponse(parsed.data);
+  const record: ChatRecord = {
+    id: `chat_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+    message: parsed.data.message,
+    response,
+    createdAt: new Date().toISOString(),
+  };
+  chatRecords.unshift(record);
+  if (chatRecords.length > 200) chatRecords.length = 200;
+  void persistChatRecords();
+
+  return { ok: true, ...record };
+});
+
+app.get("/v1/chat/recent", async (request) => {
+  const limitRaw = (request.query as { limit?: string })?.limit;
+  const parsedLimit = Number(limitRaw);
+  const limit =
+    Number.isFinite(parsedLimit) && parsedLimit > 0
+      ? Math.min(parsedLimit, 50)
+      : 20;
+  return { ok: true, count: chatRecords.length, items: chatRecords.slice(0, limit) };
+});
+
 const deletionRequestSchema = z.object({
   email: z.string().email().optional(),
   reason: z.string().min(3).max(500).optional(),
@@ -152,6 +268,7 @@ function resolveCorsOrigins() {
 
 async function start() {
   await loadIntakeRecords();
+  await loadChatRecords();
   await app.register(rateLimit, {
     global: true,
     max: 120,

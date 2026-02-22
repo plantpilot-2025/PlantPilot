@@ -16,6 +16,18 @@ const chatDataFile = resolve(
   process.cwd(),
   process.env.CHAT_DATA_FILE || ".data/chat-records.json"
 );
+const sopDataFile = resolve(
+  process.cwd(),
+  process.env.SOP_DATA_FILE || ".data/sop-records.json"
+);
+const sopEntitlementDataFile = resolve(
+  process.cwd(),
+  process.env.SOP_ENTITLEMENT_DATA_FILE || ".data/sop-entitlements.json"
+);
+const sopRoyaltyLedgerDataFile = resolve(
+  process.cwd(),
+  process.env.SOP_ROYALTY_LEDGER_FILE || ".data/sop-royalty-ledger.json"
+);
 
 app.get("/healthz", async () => ({ ok: true, service: "plantpilot-api" }));
 
@@ -53,10 +65,100 @@ type ChatRecord = {
   createdAt: string;
 };
 
+const sopStatusSchema = z.enum(["private", "submitted", "approved", "rejected"]);
+
+const sopCreateSchema = z.object({
+  name: z.string().min(2).max(120),
+  stage: z.string().min(2).max(120),
+  notes: z.string().max(4000).optional().default(""),
+});
+
+type SopRecord = {
+  id: string;
+  ownerId: string;
+  name: string;
+  stage: string;
+  notes: string;
+  status: z.infer<typeof sopStatusSchema>;
+  createdAt: string;
+  updatedAt: string;
+  submittedAt?: string;
+  approvedAt?: string;
+};
+
+type SopEntitlementRecord = {
+  id: string;
+  userId: string;
+  productId: string;
+  transactionId: string;
+  source: "apple_iap";
+  purchasedAt: string;
+};
+
+type SopRoyaltyLedgerRecord = {
+  id: string;
+  productId: string;
+  creatorId: string;
+  transactionId: string;
+  netRevenueCents: number;
+  royaltyPercent: number;
+  royaltyAmountCents: number;
+  createdAt: string;
+};
+
+type StoreListing = {
+  id: string;
+  title: string;
+  description: string;
+  priceDisplay: string;
+  currency: "USD";
+  appleProductId: string;
+  royaltyPercent: number;
+  creatorId: string;
+  active: boolean;
+};
+
+const STORE_LISTINGS: StoreListing[] = [
+  {
+    id: "sop_athena_pro_fade",
+    title: "Athena Pro - Fade Performance",
+    description: "Balanced bloom SOP tuned for stable output and fade control.",
+    priceDisplay: "$29.99",
+    currency: "USD",
+    appleProductId: "com.growroom.sop.athena_pro_fade",
+    royaltyPercent: 30,
+    creatorId: "creator_sharkmouse",
+    active: true,
+  },
+  {
+    id: "sop_sharkmouse_core",
+    title: "SharkMouse Core SOP",
+    description: "General-purpose production SOP for predictable harvest cycles.",
+    priceDisplay: "$24.99",
+    currency: "USD",
+    appleProductId: "com.growroom.sop.sharkmouse_core",
+    royaltyPercent: 30,
+    creatorId: "creator_sharkmouse",
+    active: true,
+  },
+];
+
+const iapVerifySchema = z.object({
+  productId: z.string().min(3),
+  transactionId: z.string().min(3),
+  netRevenueCents: z.number().int().min(0).optional().default(0),
+});
+
 const intakeRecords: IntakeRecord[] = [];
 const chatRecords: ChatRecord[] = [];
+const sopRecords: SopRecord[] = [];
+const sopEntitlements: SopEntitlementRecord[] = [];
+const sopRoyaltyLedger: SopRoyaltyLedgerRecord[] = [];
 let intakeWriteChain: Promise<void> = Promise.resolve();
 let chatWriteChain: Promise<void> = Promise.resolve();
+let sopWriteChain: Promise<void> = Promise.resolve();
+let sopEntitlementWriteChain: Promise<void> = Promise.resolve();
+let sopRoyaltyLedgerWriteChain: Promise<void> = Promise.resolve();
 
 async function loadIntakeRecords() {
   try {
@@ -130,6 +232,130 @@ function persistChatRecords() {
       app.log.error({ err }, "Failed writing chat records");
     });
   return chatWriteChain;
+}
+
+async function loadSopRecords() {
+  try {
+    const raw = await readFile(sopDataFile, "utf8");
+    const parsed = z
+      .array(
+        z.object({
+          id: z.string(),
+          ownerId: z.string(),
+          name: z.string(),
+          stage: z.string(),
+          notes: z.string(),
+          status: sopStatusSchema,
+          createdAt: z.string(),
+          updatedAt: z.string(),
+          submittedAt: z.string().optional(),
+          approvedAt: z.string().optional(),
+        })
+      )
+      .parse(JSON.parse(raw));
+    sopRecords.splice(0, sopRecords.length, ...parsed.slice(0, 500));
+    app.log.info({ count: sopRecords.length, sopDataFile }, "Loaded SOP records from disk");
+  } catch {
+    app.log.info({ sopDataFile }, "No SOP data file yet");
+  }
+}
+
+function persistSopRecords() {
+  const snapshot = JSON.stringify(sopRecords, null, 2);
+  sopWriteChain = sopWriteChain
+    .then(async () => {
+      await mkdir(dirname(sopDataFile), { recursive: true });
+      await writeFile(sopDataFile, snapshot, "utf8");
+    })
+    .catch((err) => {
+      app.log.error({ err }, "Failed writing SOP records");
+    });
+  return sopWriteChain;
+}
+
+async function loadSopEntitlements() {
+  try {
+    const raw = await readFile(sopEntitlementDataFile, "utf8");
+    const parsed = z
+      .array(
+        z.object({
+          id: z.string(),
+          userId: z.string(),
+          productId: z.string(),
+          transactionId: z.string(),
+          source: z.literal("apple_iap"),
+          purchasedAt: z.string(),
+        })
+      )
+      .parse(JSON.parse(raw));
+    sopEntitlements.splice(0, sopEntitlements.length, ...parsed.slice(0, 1000));
+    app.log.info(
+      { count: sopEntitlements.length, sopEntitlementDataFile },
+      "Loaded SOP entitlements from disk"
+    );
+  } catch {
+    app.log.info({ sopEntitlementDataFile }, "No SOP entitlement data file yet");
+  }
+}
+
+function persistSopEntitlements() {
+  const snapshot = JSON.stringify(sopEntitlements, null, 2);
+  sopEntitlementWriteChain = sopEntitlementWriteChain
+    .then(async () => {
+      await mkdir(dirname(sopEntitlementDataFile), { recursive: true });
+      await writeFile(sopEntitlementDataFile, snapshot, "utf8");
+    })
+    .catch((err) => {
+      app.log.error({ err }, "Failed writing SOP entitlements");
+    });
+  return sopEntitlementWriteChain;
+}
+
+async function loadSopRoyaltyLedger() {
+  try {
+    const raw = await readFile(sopRoyaltyLedgerDataFile, "utf8");
+    const parsed = z
+      .array(
+        z.object({
+          id: z.string(),
+          productId: z.string(),
+          creatorId: z.string(),
+          transactionId: z.string(),
+          netRevenueCents: z.number().int(),
+          royaltyPercent: z.number(),
+          royaltyAmountCents: z.number().int(),
+          createdAt: z.string(),
+        })
+      )
+      .parse(JSON.parse(raw));
+    sopRoyaltyLedger.splice(0, sopRoyaltyLedger.length, ...parsed.slice(0, 5000));
+    app.log.info(
+      { count: sopRoyaltyLedger.length, sopRoyaltyLedgerDataFile },
+      "Loaded SOP royalty ledger from disk"
+    );
+  } catch {
+    app.log.info({ sopRoyaltyLedgerDataFile }, "No SOP royalty ledger file yet");
+  }
+}
+
+function persistSopRoyaltyLedger() {
+  const snapshot = JSON.stringify(sopRoyaltyLedger, null, 2);
+  sopRoyaltyLedgerWriteChain = sopRoyaltyLedgerWriteChain
+    .then(async () => {
+      await mkdir(dirname(sopRoyaltyLedgerDataFile), { recursive: true });
+      await writeFile(sopRoyaltyLedgerDataFile, snapshot, "utf8");
+    })
+    .catch((err) => {
+      app.log.error({ err }, "Failed writing SOP royalty ledger");
+    });
+  return sopRoyaltyLedgerWriteChain;
+}
+
+function getUserIdFromHeaders(headers: Record<string, string | string[] | undefined>) {
+  const raw = headers["x-growroom-user-id"];
+  if (Array.isArray(raw)) return raw[0] || "anon_user";
+  if (!raw) return "anon_user";
+  return String(raw).trim() || "anon_user";
 }
 
 function buildChatResponse(input: z.infer<typeof chatRequestSchema>) {
@@ -228,6 +454,155 @@ app.get("/v1/chat/recent", async (request) => {
   return { ok: true, count: chatRecords.length, items: chatRecords.slice(0, limit) };
 });
 
+app.get("/v1/sops/store", async (request) => {
+  const userId = getUserIdFromHeaders(request.headers);
+  const ownedProductIds = new Set(
+    sopEntitlements.filter((entry) => entry.userId === userId).map((entry) => entry.productId)
+  );
+  return {
+    ok: true,
+    count: STORE_LISTINGS.length,
+    items: STORE_LISTINGS.filter((item) => item.active).map((item) => ({
+      ...item,
+      status: ownedProductIds.has(item.id) ? "owned" : "locked",
+    })),
+  };
+});
+
+app.get("/v1/sops/my", async (request) => {
+  const userId = getUserIdFromHeaders(request.headers);
+  const items = sopRecords
+    .filter((record) => record.ownerId === userId)
+    .sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1))
+    .slice(0, 100);
+  return { ok: true, count: items.length, items };
+});
+
+app.post("/v1/sops/my", async (request, reply) => {
+  const parsed = sopCreateSchema.safeParse(request.body);
+  if (!parsed.success) {
+    return reply.status(400).send({
+      ok: false,
+      error: "Invalid SOP payload",
+      details: parsed.error.issues.map((issue) => ({
+        path: issue.path.join("."),
+        message: issue.message,
+      })),
+    });
+  }
+
+  const userId = getUserIdFromHeaders(request.headers);
+  const now = new Date().toISOString();
+  const record: SopRecord = {
+    id: `sop_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+    ownerId: userId,
+    name: parsed.data.name,
+    stage: parsed.data.stage,
+    notes: parsed.data.notes,
+    status: "private",
+    createdAt: now,
+    updatedAt: now,
+  };
+  sopRecords.unshift(record);
+  if (sopRecords.length > 1000) sopRecords.length = 1000;
+  void persistSopRecords();
+  return { ok: true, item: record };
+});
+
+app.post("/v1/sops/:id/submit", async (request, reply) => {
+  const id = (request.params as { id?: string })?.id;
+  if (!id) {
+    return reply.status(400).send({ ok: false, error: "Missing SOP id" });
+  }
+  const userId = getUserIdFromHeaders(request.headers);
+  const existing = sopRecords.find((record) => record.id === id && record.ownerId === userId);
+  if (!existing) {
+    return reply.status(404).send({ ok: false, error: "SOP not found" });
+  }
+  existing.status = "submitted";
+  existing.submittedAt = new Date().toISOString();
+  existing.updatedAt = existing.submittedAt;
+  void persistSopRecords();
+  return { ok: true, item: existing };
+});
+
+app.get("/v1/sops/entitlements", async (request) => {
+  const userId = getUserIdFromHeaders(request.headers);
+  const items = sopEntitlements
+    .filter((entry) => entry.userId === userId)
+    .sort((a, b) => (a.purchasedAt < b.purchasedAt ? 1 : -1))
+    .slice(0, 200);
+  return { ok: true, count: items.length, items };
+});
+
+app.post("/v1/sops/iap/verify", async (request, reply) => {
+  const parsed = iapVerifySchema.safeParse(request.body);
+  if (!parsed.success) {
+    return reply.status(400).send({
+      ok: false,
+      error: "Invalid IAP payload",
+      details: parsed.error.issues.map((issue) => ({
+        path: issue.path.join("."),
+        message: issue.message,
+      })),
+    });
+  }
+
+  const listing = STORE_LISTINGS.find((item) => item.id === parsed.data.productId && item.active);
+  if (!listing) {
+    return reply.status(404).send({ ok: false, error: "Store product not found" });
+  }
+
+  const userId = getUserIdFromHeaders(request.headers);
+  const existing = sopEntitlements.find(
+    (entry) =>
+      entry.userId === userId &&
+      entry.productId === parsed.data.productId &&
+      entry.transactionId === parsed.data.transactionId
+  );
+  if (existing) {
+    return { ok: true, alreadyOwned: true, entitlement: existing };
+  }
+
+  const now = new Date().toISOString();
+  const entitlement: SopEntitlementRecord = {
+    id: `ent_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+    userId,
+    productId: parsed.data.productId,
+    transactionId: parsed.data.transactionId,
+    source: "apple_iap",
+    purchasedAt: now,
+  };
+  sopEntitlements.unshift(entitlement);
+  if (sopEntitlements.length > 5000) sopEntitlements.length = 5000;
+  void persistSopEntitlements();
+
+  const netRevenueCents = parsed.data.netRevenueCents;
+  if (netRevenueCents > 0) {
+    const royaltyAmountCents = Math.round((netRevenueCents * listing.royaltyPercent) / 100);
+    const royaltyEntry: SopRoyaltyLedgerRecord = {
+      id: `roy_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+      productId: listing.id,
+      creatorId: listing.creatorId,
+      transactionId: parsed.data.transactionId,
+      netRevenueCents,
+      royaltyPercent: listing.royaltyPercent,
+      royaltyAmountCents,
+      createdAt: now,
+    };
+    sopRoyaltyLedger.unshift(royaltyEntry);
+    if (sopRoyaltyLedger.length > 5000) sopRoyaltyLedger.length = 5000;
+    void persistSopRoyaltyLedger();
+  }
+
+  return {
+    ok: true,
+    entitlement,
+    royaltyPercent: listing.royaltyPercent,
+    message: "Purchase verified and entitlement granted.",
+  };
+});
+
 const deletionRequestSchema = z.object({
   email: z.string().email().optional(),
   reason: z.string().min(3).max(500).optional(),
@@ -269,6 +644,9 @@ function resolveCorsOrigins() {
 async function start() {
   await loadIntakeRecords();
   await loadChatRecords();
+  await loadSopRecords();
+  await loadSopEntitlements();
+  await loadSopRoyaltyLedger();
   await app.register(rateLimit, {
     global: true,
     max: 120,

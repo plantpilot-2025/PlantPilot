@@ -28,6 +28,10 @@ const sopRoyaltyLedgerDataFile = resolve(
   process.cwd(),
   process.env.SOP_ROYALTY_LEDGER_FILE || ".data/sop-royalty-ledger.json"
 );
+const sensorDataFile = resolve(
+  process.cwd(),
+  process.env.SENSOR_DATA_FILE || ".data/sensor-readings.json"
+);
 
 app.get("/healthz", async () => ({ ok: true, service: "plantpilot-api" }));
 
@@ -149,16 +153,51 @@ const iapVerifySchema = z.object({
   netRevenueCents: z.number().int().min(0).optional().default(0),
 });
 
+const sensorSourceSchema = z.enum(["phone_estimate", "external_verified"]);
+
+const sensorIngestSchema = z.object({
+  sourceType: sensorSourceSchema,
+  sourceName: z.string().min(1).max(120).optional().default(""),
+  sessionId: z.string().max(120).optional().default(""),
+  readings: z
+    .array(
+      z.object({
+        metric: z.string().min(2).max(80),
+        value: z.number().finite(),
+        unit: z.string().max(40).optional().default(""),
+        capturedAt: z.string().optional().default(""),
+      })
+    )
+    .min(1)
+    .max(50),
+});
+
+type SensorReadingRecord = {
+  id: string;
+  userId: string;
+  sourceType: z.infer<typeof sensorSourceSchema>;
+  sourceName: string;
+  sessionId: string;
+  metric: string;
+  value: number;
+  unit: string;
+  capturedAt: string;
+  confidence: "estimate" | "verified";
+  createdAt: string;
+};
+
 const intakeRecords: IntakeRecord[] = [];
 const chatRecords: ChatRecord[] = [];
 const sopRecords: SopRecord[] = [];
 const sopEntitlements: SopEntitlementRecord[] = [];
 const sopRoyaltyLedger: SopRoyaltyLedgerRecord[] = [];
+const sensorReadings: SensorReadingRecord[] = [];
 let intakeWriteChain: Promise<void> = Promise.resolve();
 let chatWriteChain: Promise<void> = Promise.resolve();
 let sopWriteChain: Promise<void> = Promise.resolve();
 let sopEntitlementWriteChain: Promise<void> = Promise.resolve();
 let sopRoyaltyLedgerWriteChain: Promise<void> = Promise.resolve();
+let sensorWriteChain: Promise<void> = Promise.resolve();
 
 async function loadIntakeRecords() {
   try {
@@ -351,6 +390,49 @@ function persistSopRoyaltyLedger() {
   return sopRoyaltyLedgerWriteChain;
 }
 
+async function loadSensorReadings() {
+  try {
+    const raw = await readFile(sensorDataFile, "utf8");
+    const parsed = z
+      .array(
+        z.object({
+          id: z.string(),
+          userId: z.string(),
+          sourceType: sensorSourceSchema,
+          sourceName: z.string(),
+          sessionId: z.string(),
+          metric: z.string(),
+          value: z.number(),
+          unit: z.string(),
+          capturedAt: z.string(),
+          confidence: z.enum(["estimate", "verified"]),
+          createdAt: z.string(),
+        })
+      )
+      .parse(JSON.parse(raw));
+    sensorReadings.splice(0, sensorReadings.length, ...parsed.slice(0, 10000));
+    app.log.info(
+      { count: sensorReadings.length, sensorDataFile },
+      "Loaded sensor readings from disk"
+    );
+  } catch {
+    app.log.info({ sensorDataFile }, "No sensor readings file yet");
+  }
+}
+
+function persistSensorReadings() {
+  const snapshot = JSON.stringify(sensorReadings, null, 2);
+  sensorWriteChain = sensorWriteChain
+    .then(async () => {
+      await mkdir(dirname(sensorDataFile), { recursive: true });
+      await writeFile(sensorDataFile, snapshot, "utf8");
+    })
+    .catch((err) => {
+      app.log.error({ err }, "Failed writing sensor readings");
+    });
+  return sensorWriteChain;
+}
+
 function getUserIdFromHeaders(headers: Record<string, string | string[] | undefined>) {
   const raw = headers["x-growroom-user-id"];
   if (Array.isArray(raw)) return raw[0] || "anon_user";
@@ -358,23 +440,43 @@ function getUserIdFromHeaders(headers: Record<string, string | string[] | undefi
   return String(raw).trim() || "anon_user";
 }
 
-function buildChatResponse(input: z.infer<typeof chatRequestSchema>) {
+function getLatestSensorSnapshot(userId: string) {
+  const latestByMetric = new Map<string, SensorReadingRecord>();
+  for (const reading of sensorReadings) {
+    if (reading.userId !== userId) continue;
+    if (!latestByMetric.has(reading.metric)) {
+      latestByMetric.set(reading.metric, reading);
+    }
+  }
+  return Array.from(latestByMetric.values()).slice(0, 8);
+}
+
+function buildChatResponse(
+  input: z.infer<typeof chatRequestSchema>,
+  sensorSnapshot: SensorReadingRecord[]
+) {
   const message = input.message.toLowerCase();
   const targetPpm = input.context?.targetPpm || "your target";
   const targetPh = input.context?.targetPh || "your target";
   const plantName = input.context?.plantName || "your plant";
 
+  const sensorHint = sensorSnapshot.length
+    ? ` Sensor context: ${sensorSnapshot
+        .map((reading) => `${reading.metric}=${reading.value}${reading.unit ? ` ${reading.unit}` : ""}`)
+        .join(", ")}.`
+    : "";
+
   if (message.includes("ppm")) {
-    return `For ${plantName}, start by stabilizing near ${targetPpm} ppm, then adjust in small increments based on new growth response over 24-48h.`;
+    return `For ${plantName}, start by stabilizing near ${targetPpm} ppm, then adjust in small increments based on new growth response over 24-48h.${sensorHint}`;
   }
   if (message.includes("ph")) {
-    return `Keep pH close to ${targetPh}. If readings drift, correct gradually rather than in one large correction to avoid plant stress.`;
+    return `Keep pH close to ${targetPh}. If readings drift, correct gradually rather than in one large correction to avoid plant stress.${sensorHint}`;
   }
   if (message.includes("flush")) {
-    return "If a flush is needed, run clean water until runoff EC/PPM drops significantly, then reintroduce nutrients at a lighter strength.";
+    return `If a flush is needed, run clean water until runoff EC/PPM drops significantly, then reintroduce nutrients at a lighter strength.${sensorHint}`;
   }
 
-  return "Current recommendation: verify environment stability first (temp, RH, EC/PPM, pH), then change only one variable at a time and monitor for 24-48h.";
+  return `Current recommendation: verify environment stability first (temp, RH, EC/PPM, pH), then change only one variable at a time and monitor for 24-48h.${sensorHint}`;
 }
 
 app.post("/v1/intake", async (request, reply) => {
@@ -430,7 +532,8 @@ app.post("/v1/chat", async (request, reply) => {
     });
   }
 
-  const response = buildChatResponse(parsed.data);
+  const userId = getUserIdFromHeaders(request.headers);
+  const response = buildChatResponse(parsed.data, getLatestSensorSnapshot(userId));
   const record: ChatRecord = {
     id: `chat_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
     message: parsed.data.message,
@@ -603,6 +706,68 @@ app.post("/v1/sops/iap/verify", async (request, reply) => {
   };
 });
 
+app.post("/v1/sensors/ingest", async (request, reply) => {
+  const parsed = sensorIngestSchema.safeParse(request.body);
+  if (!parsed.success) {
+    return reply.status(400).send({
+      ok: false,
+      error: "Invalid sensor payload",
+      details: parsed.error.issues.map((issue) => ({
+        path: issue.path.join("."),
+        message: issue.message,
+      })),
+    });
+  }
+
+  const userId = getUserIdFromHeaders(request.headers);
+  const confidence: SensorReadingRecord["confidence"] =
+    parsed.data.sourceType === "external_verified" ? "verified" : "estimate";
+  const createdAt = new Date().toISOString();
+  const records = parsed.data.readings.map((reading) => ({
+    id: `sns_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+    userId,
+    sourceType: parsed.data.sourceType,
+    sourceName: parsed.data.sourceName,
+    sessionId: parsed.data.sessionId,
+    metric: reading.metric,
+    value: reading.value,
+    unit: reading.unit,
+    capturedAt: reading.capturedAt || createdAt,
+    confidence,
+    createdAt,
+  }));
+
+  sensorReadings.unshift(...records);
+  if (sensorReadings.length > 10000) sensorReadings.length = 10000;
+  void persistSensorReadings();
+
+  return {
+    ok: true,
+    count: records.length,
+    confidence,
+    warning:
+      confidence === "estimate"
+        ? "Phone estimates are approximate. Connect external sensors for verified accuracy."
+        : "",
+    items: records,
+  };
+});
+
+app.get("/v1/sensors/recent", async (request) => {
+  const userId = getUserIdFromHeaders(request.headers);
+  const limitRaw = (request.query as { limit?: string })?.limit;
+  const parsedLimit = Number(limitRaw);
+  const limit =
+    Number.isFinite(parsedLimit) && parsedLimit > 0 ? Math.min(parsedLimit, 100) : 30;
+
+  const items = sensorReadings.filter((entry) => entry.userId === userId).slice(0, limit);
+  const warning = items.some((entry) => entry.confidence === "estimate")
+    ? "Some readings are phone estimates. Connect verified sensors for higher accuracy."
+    : "";
+
+  return { ok: true, count: items.length, warning, items };
+});
+
 const deletionRequestSchema = z.object({
   email: z.string().email().optional(),
   reason: z.string().min(3).max(500).optional(),
@@ -647,6 +812,7 @@ async function start() {
   await loadSopRecords();
   await loadSopEntitlements();
   await loadSopRoyaltyLedger();
+  await loadSensorReadings();
   await app.register(rateLimit, {
     global: true,
     max: 120,

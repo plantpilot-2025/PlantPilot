@@ -2,10 +2,16 @@ import "dotenv/config";
 import Fastify from "fastify";
 import cors from "@fastify/cors";
 import rateLimit from "@fastify/rate-limit";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { dirname, resolve } from "node:path";
 import { z } from "zod";
 
 const app = Fastify({ logger: true });
 const port = Number(process.env.PORT || 8789);
+const intakeDataFile = resolve(
+  process.cwd(),
+  process.env.INTAKE_DATA_FILE || ".data/intake-records.json"
+);
 
 app.get("/healthz", async () => ({ ok: true, service: "plantpilot-api" }));
 
@@ -25,6 +31,46 @@ type IntakeRecord = IntakePayload & {
 };
 
 const intakeRecords: IntakeRecord[] = [];
+let intakeWriteChain: Promise<void> = Promise.resolve();
+
+async function loadIntakeRecords() {
+  try {
+    const raw = await readFile(intakeDataFile, "utf8");
+    const parsed = z.array(
+      z.object({
+        id: z.string(),
+        receivedAt: z.string(),
+        plantName: z.string(),
+        roomName: z.string(),
+        targetPpm: z.string(),
+        targetPh: z.string(),
+        notes: z.string(),
+        queuedAt: z.string(),
+      })
+    ).parse(JSON.parse(raw));
+
+    intakeRecords.splice(0, intakeRecords.length, ...parsed.slice(0, 200));
+    app.log.info(
+      { count: intakeRecords.length, intakeDataFile },
+      "Loaded intake records from disk"
+    );
+  } catch {
+    app.log.info({ intakeDataFile }, "No intake data file yet");
+  }
+}
+
+function persistIntakeRecords() {
+  const snapshot = JSON.stringify(intakeRecords, null, 2);
+  intakeWriteChain = intakeWriteChain
+    .then(async () => {
+      await mkdir(dirname(intakeDataFile), { recursive: true });
+      await writeFile(intakeDataFile, snapshot, "utf8");
+    })
+    .catch((err) => {
+      app.log.error({ err }, "Failed writing intake records");
+    });
+  return intakeWriteChain;
+}
 
 app.post("/v1/intake", async (request, reply) => {
   const parsed = intakeSchema.safeParse(request.body);
@@ -47,6 +93,7 @@ app.post("/v1/intake", async (request, reply) => {
 
   intakeRecords.unshift(record);
   if (intakeRecords.length > 200) intakeRecords.length = 200;
+  void persistIntakeRecords();
   app.log.info(
     { id: record.id, plantName: record.plantName, roomName: record.roomName },
     "Intake received"
@@ -104,6 +151,7 @@ function resolveCorsOrigins() {
 }
 
 async function start() {
+  await loadIntakeRecords();
   await app.register(rateLimit, {
     global: true,
     max: 120,

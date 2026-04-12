@@ -1052,9 +1052,10 @@ app.post("/coach/stream", async (req: Request, res: Response) => {
 
     const prompt = buildCoachPrompt(flags, symptoms, targets, salt);
     let fullText = "";
+    let usedFallback = false;
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), LLM_TIMEOUT_MS);
-    req.on("close", () => controller.abort());
+    res.on("close", () => controller.abort());
 
     try {
       for await (const token of streamChatTokens(prompt, controller.signal, { maxTokens: LLM_MAXTOK })) {
@@ -1065,6 +1066,7 @@ app.post("/coach/stream", async (req: Request, res: Response) => {
       const msg = streamErr instanceof Error ? streamErr.message : "stream error";
       console.warn("[coach/stream] LLM stream error:", msg);
       if (!fullText) {
+        usedFallback = true;
         fullText = buildFallbackSummary(flags);
         send("token", { t: fullText });
       }
@@ -1072,7 +1074,7 @@ app.post("/coach/stream", async (req: Request, res: Response) => {
       clearTimeout(timer);
     }
 
-    send("done", { generator: fullText ? "llm-coach-stream" : "rules-fallback", length: fullText.length });
+    send("done", { generator: usedFallback ? "rules-fallback" : "llm-coach-stream", length: fullText.length });
   } catch (error: any) {
     send("error", { message: String(error?.message || error) });
   }

@@ -23,7 +23,7 @@ const HUMANIZED_MIN_CHARS = Number(process.env.HUMANIZED_MIN_CHARS || 600);
 const PROJ = (process.env.OPENAI_PROJECT || process.env.LLM_PROJECT_ID || "").trim();
 const ORG = (process.env.OPENAI_ORG || process.env.OPENAI_ORGANIZATION || "").trim();
 
-const LLM_ENABLED = /^sk-[A-Za-z0-9_\-]{20,}$/.test(LLM_KEY);
+const LLM_ENABLED = /^sk-.{20,}$/.test(LLM_KEY);
 
 const TTS_PROVIDER = (process.env.TTS_PROVIDER || "edge").toLowerCase();
 const EDGE_VOICE = process.env.EDGE_VOICE || "en-US-AriaNeural";

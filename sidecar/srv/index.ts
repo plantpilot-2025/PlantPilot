@@ -523,10 +523,14 @@ async function pullSymptoms(signal?: AbortSignal): Promise<string[]> {
 async function generateCoachReport(
   opts: { maxTokens?: number; salt?: string; llm_ms?: number }
 ): Promise<{ prose: string; quality: any; generator: string }> {
-  const gas = await withTimeout(GAS_TIMEOUT_MS, (s) => pullGas(s));
-  let symptoms: string[] = [];
-  try { symptoms = await withTimeout(GAS_TIMEOUT_MS, (s) => pullSymptoms(s)); }
-  catch (e) { console.warn("[coach] symptom fetch failed:", (e as any)?.message); }
+  const [gasResult, symptomsResult] = await Promise.allSettled([
+    withTimeout(GAS_TIMEOUT_MS, (s) => pullGas(s)),
+    withTimeout(GAS_TIMEOUT_MS, (s) => pullSymptoms(s)),
+  ]);
+  if (gasResult.status === "rejected") throw gasResult.reason;
+  const gas = gasResult.value;
+  const symptoms: string[] = symptomsResult.status === "fulfilled" ? symptomsResult.value : [];
+  if (symptomsResult.status === "rejected") console.warn("[coach] symptom fetch failed:", symptomsResult.reason?.message);
 
   if (!LLM_ENABLED) {
     return {
@@ -610,10 +614,14 @@ function buildDeterministicFallback(flags: GasFlag[], symptoms: string[], target
 async function generateExpandedReport(
   opts: { maxTokens?: number; salt?: string; llm_ms?: number }
 ): Promise<{ text: string; generator: string }> {
-  const gas = await withTimeout(GAS_TIMEOUT_MS, (s) => pullGas(s));
-  let symptoms: string[] = [];
-  try { symptoms = await withTimeout(GAS_TIMEOUT_MS, (s) => pullSymptoms(s)); }
-  catch (e) { console.warn("[expanded] symptom fetch failed:", (e as any)?.message); }
+  const [gasResult, symptomsResult] = await Promise.allSettled([
+    withTimeout(GAS_TIMEOUT_MS, (s) => pullGas(s)),
+    withTimeout(GAS_TIMEOUT_MS, (s) => pullSymptoms(s)),
+  ]);
+  if (gasResult.status === "rejected") throw gasResult.reason;
+  const gas = gasResult.value;
+  const symptoms: string[] = symptomsResult.status === "fulfilled" ? symptomsResult.value : [];
+  if (symptomsResult.status === "rejected") console.warn("[expanded] symptom fetch failed:", symptomsResult.reason?.message);
 
   if (!LLM_ENABLED) {
     return {

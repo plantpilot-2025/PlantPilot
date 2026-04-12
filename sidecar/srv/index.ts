@@ -1,8 +1,16 @@
 import cors from "cors";
 import { createRequire } from "module";
+import { readFileSync } from "fs";
+import { resolve } from "path";
 const _require = createRequire(import.meta.url);
 const express = _require("express") as typeof import("express");
 import type { Request, Response } from "express";
+
+const RULES_PATH = resolve(process.cwd(), "srv", "rules", "growroom-rules.json");
+let growroomRules: { metrics: any[]; conditions: any[]; stageProfiles: any[] } = { metrics: [], conditions: [], stageProfiles: [] };
+try { growroomRules = JSON.parse(readFileSync(RULES_PATH, "utf-8")); } catch (e) {
+  console.warn("[sidecar] Could not load growroom-rules.json from", RULES_PATH, "– local evaluation disabled");
+}
 
 let edgeTts: ((opts: { text: string; voice: string; rate: string; volume: string }) => AsyncIterable<{ type: string; data?: Uint8Array }>) | null = null;
 let googleTTSApi: any = null;
@@ -317,6 +325,112 @@ function ensureSectionHeaders(text: string): string[] {
   return req.filter(h => !text.includes(h));
 }
 
+/* ==================== Local Evaluation (replaces GAS for flag computation) ==================== */
+
+type IntakePayload = {
+  tempC?: number; rh?: number; vpdKpa?: number; ppfd?: number; dliMol?: number; co2?: number;
+  reservoirEc?: number; reservoirPh?: number; runoffPh?: number; runoffEc?: number; runoffPct?: number;
+  reservoirTempC?: number; pwec?: number; vwcAtLastIrr?: number; drybackPct24h?: number;
+  p1MlPerEvent?: number; p2MlPerEvent?: number;
+  stagePhase?: string; medium?: string; profile?: string; lightcycle?: string;
+  photoperiodH?: number; co2Mode?: string;
+  symptoms?: string[];
+};
+
+const localMetrics = growroomRules.metrics ?? [];
+const localConditions = growroomRules.conditions ?? [];
+const localStageProfiles = growroomRules.stageProfiles ?? [];
+
+function normalizeLabel(label: string): string {
+  return label.toLowerCase().replace(/\(.*?\)/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+function findMetricRule(names: string[]): any {
+  const normed = names.map(normalizeLabel);
+  for (const row of localMetrics) {
+    const n = normalizeLabel(row.metric);
+    if (normed.includes(n)) return row;
+  }
+  for (const row of localMetrics) {
+    const n = normalizeLabel(row.metric);
+    if (normed.some((c: string) => n.includes(c))) return row;
+  }
+  return null;
+}
+
+function findStageProfile(stage?: string, sop?: string, lc?: string): any {
+  if (!stage) return null;
+  const phase = stage.toLowerCase();
+  const sopN = (sop || "sharkmousefarms").toLowerCase();
+  const lcN = (lc || "day").toLowerCase();
+  for (const p of localStageProfiles) {
+    if (p.phase?.toLowerCase() === phase && p.key?.toLowerCase().includes(sopN) && p.lightcycle?.toLowerCase() === lcN) return p;
+  }
+  for (const p of localStageProfiles) {
+    if (p.phase?.toLowerCase() === phase && p.key?.toLowerCase().includes(sopN)) return p;
+  }
+  return null;
+}
+
+function localEvalFlags(intake: IntakePayload): GasFlag[] {
+  const gateMetricMap: Record<string, Record<string, number | undefined>> = {
+    ENV: {
+      "canopy temp": intake.tempC, rh: intake.rh, vpd: intake.vpdKpa,
+      ppfd: intake.ppfd, dli: intake.dliMol, co2: intake.co2,
+    },
+    ROOT: {
+      "reservoir temp": intake.reservoirTempC, vwc: intake.vwcAtLastIrr,
+      pwec: intake.pwec, "runoff ec": intake.runoffEc, "runoff ph": intake.runoffPh,
+    },
+    IRR: {
+      "reservoir ec": intake.reservoirEc, "feed ec": intake.reservoirEc,
+      "reservoir ph": intake.reservoirPh, "feed ph": intake.reservoirPh,
+      "overnight dryback": intake.drybackPct24h, dryback: intake.drybackPct24h,
+    },
+  };
+
+  const profile = findStageProfile(intake.stagePhase, intake.profile, intake.lightcycle);
+  const TOL = 0.10;
+  const profileTargets: Record<string, number | null> = profile ? {
+    tempC: profile.tair_c, rh: profile.rh_percent, vpdKpa: profile.vpd_air_kpa,
+    ppfd: profile.ppfd_umol, co2: profile.co2_ppm,
+  } : {};
+
+  const allFlags: GasFlag[] = [];
+  for (const [gate, fields] of Object.entries(gateMetricMap)) {
+    const gateFlags: GasFlag[] = [];
+    for (const rule of localMetrics.filter((m: any) => m.gate?.toUpperCase() === gate)) {
+      const normName = normalizeLabel(rule.metric);
+      const value = fields[normName];
+      if (value == null || !Number.isFinite(value)) continue;
+
+      let min = rule.min, max = rule.max;
+      const metricKeyMap: Record<string, string> = {
+        "canopy temp": "tempC", rh: "rh", vpd: "vpdKpa", ppfd: "ppfd", co2: "co2",
+      };
+      const pKey = metricKeyMap[normName];
+      if (pKey && profileTargets[pKey] != null) {
+        const t = profileTargets[pKey]!;
+        min = t * (1 - TOL); max = t * (1 + TOL);
+      }
+
+      if (min == null || max == null) continue;
+      if (value < min || value > max) {
+        const deviation = value < min ? min - value : value - max;
+        const range = max - min || 1;
+        const severity = Math.min(1, deviation / range);
+        const direction = value < min ? "low" : "high";
+        const reason = `${rule.metric} is ${direction} (${value} vs ${min.toFixed?.(1) ?? min}–${max.toFixed?.(1) ?? max})`;
+        gateFlags.push({ label: rule.metric, reason, score: severity, severity: scoreToSeverity(severity), gate });
+      }
+    }
+    gateFlags.sort((a, b) => b.score - a.score);
+    allFlags.push(...gateFlags.slice(0, 3));
+  }
+  allFlags.sort((a, b) => b.score - a.score);
+  return allFlags;
+}
+
 /* ==================== OpenAI Callers ==================== */
 
 function buildHeaders(): Record<string, string> {
@@ -416,6 +530,45 @@ async function callLLM(prompt: string, signal?: AbortSignal, opts?: { maxTokens?
       return await callOpenAI_TEXT_chat(prompt, signal, { ...opts, model: LLM_FALLBACK_MODEL });
     }
     throw e;
+  }
+}
+
+async function* streamChatTokens(
+  prompt: string,
+  signal?: AbortSignal,
+  opts?: { maxTokens?: number }
+): AsyncGenerator<string, void, unknown> {
+  const url = `${LLM_BASE}/v1/chat/completions`;
+  const tok = opts?.maxTokens ?? LLM_MAXTOK;
+  const messages = [
+    { role: "system", content: "Write in English (US). Plain text. No markdown." },
+    { role: "user", content: prompt },
+  ];
+  const body: any = { model: LLM_MODEL, messages, max_completion_tokens: tok, stream: true };
+  const r = await fetch(url, { method: "POST", headers: buildHeaders(), body: JSON.stringify(body), signal });
+  if (!r.ok) throw new Error(`LLM HTTP ${r.status}`);
+  if (!r.body) throw new Error("No response body for streaming");
+
+  const reader = r.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split("\n");
+    buffer = lines.pop() || "";
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed.startsWith("data: ")) continue;
+      const data = trimmed.slice(6);
+      if (data === "[DONE]") return;
+      try {
+        const parsed = JSON.parse(data);
+        const delta = parsed?.choices?.[0]?.delta?.content;
+        if (typeof delta === "string") yield delta;
+      } catch {}
+    }
   }
 }
 
@@ -862,6 +1015,68 @@ app.get("/explain/humanized", (req: Request, res: Response) => {
 });
 app.get("/explain/expanded", (req: Request, res: Response) => {
   res.redirect(307, `/sheet/explain/expanded?${new URLSearchParams(req.query as any).toString()}`);
+});
+
+/* --- Streaming Coach Endpoint --- */
+
+app.post("/coach/stream", async (req: Request, res: Response) => {
+  const intake = (req.body || {}) as IntakePayload;
+  const symptoms = Array.isArray(intake.symptoms) ? intake.symptoms.filter((s: any) => typeof s === "string" && s.trim()) : [];
+  const salt = typeof (req.body as any)?.salt === "string" ? (req.body as any).salt : "";
+
+  res.writeHead(200, {
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    Connection: "keep-alive",
+    "X-Accel-Buffering": "no",
+  });
+
+  const send = (event: string, data: any) => {
+    res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
+  };
+
+  try {
+    const flags = localEvalFlags(intake);
+    const stage = intake.stagePhase || "unspecified";
+    const targets = { targets: { stage } };
+
+    send("flags", { flags, stage });
+
+    if (!LLM_ENABLED) {
+      const prose = buildFallbackSummary(flags);
+      send("token", { t: prose });
+      send("done", { generator: "rules-fallback-no-openai", length: prose.length });
+      res.end();
+      return;
+    }
+
+    const prompt = buildCoachPrompt(flags, symptoms, targets, salt);
+    let fullText = "";
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), LLM_TIMEOUT_MS);
+    req.on("close", () => controller.abort());
+
+    try {
+      for await (const token of streamChatTokens(prompt, controller.signal, { maxTokens: LLM_MAXTOK })) {
+        fullText += token;
+        send("token", { t: token });
+      }
+    } catch (streamErr: unknown) {
+      const msg = streamErr instanceof Error ? streamErr.message : "stream error";
+      console.warn("[coach/stream] LLM stream error:", msg);
+      if (!fullText) {
+        fullText = buildFallbackSummary(flags);
+        send("token", { t: fullText });
+      }
+    } finally {
+      clearTimeout(timer);
+    }
+
+    send("done", { generator: fullText ? "llm-coach-stream" : "rules-fallback", length: fullText.length });
+  } catch (error: any) {
+    send("error", { message: String(error?.message || error) });
+  }
+  res.end();
 });
 
 /* --- Irrigation Routes --- */

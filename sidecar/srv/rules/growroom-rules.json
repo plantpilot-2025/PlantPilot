@@ -1,0 +1,5707 @@
+{
+  "generatedAt": "2026-03-12T20:37:29.966Z",
+  "sourceFile": "/Users/simon/Desktop/Plantpilot/plantpilot-platform/GrowRoom.xlsx",
+  "sheet": "LISTS",
+  "metrics": [
+    {
+      "metric": "Canopy temp (°C)",
+      "target": 26.11111111,
+      "min": 23.5,
+      "max": 28.72222222,
+      "gate": "ENV",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "RH (%)",
+      "target": 59,
+      "min": 56.05,
+      "max": 61.95,
+      "gate": "ENV",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "VPD (kPa)",
+      "target": 1.41,
+      "min": 1.269,
+      "max": 1.551,
+      "gate": "ENV",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "PPFD (µmol/m²/s)",
+      "target": 1200,
+      "min": 1080,
+      "max": 1320,
+      "gate": "ENV",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "DLI (mol/m²/d)",
+      "target": 51.8,
+      "min": 46.62,
+      "max": 56.980000000000004,
+      "gate": "ENV",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Photoperiod (h)",
+      "target": null,
+      "min": null,
+      "max": null,
+      "gate": "ENV",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "CO2 (ppm)",
+      "target": 1200,
+      "min": 600,
+      "max": 1800,
+      "gate": "ENV",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Media",
+      "target": null,
+      "min": null,
+      "max": null,
+      "gate": "ROOT",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Runoff pH",
+      "target": 5.7,
+      "min": 5.358,
+      "max": 6.042000000000001,
+      "gate": "ROOT",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Bulk EC (mS/cm)",
+      "target": null,
+      "min": null,
+      "max": null,
+      "gate": "ROOT",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "PWEC / Runoff EC (mS/cm)",
+      "target": 4.5,
+      "min": 4.5,
+      "max": 4.5,
+      "gate": "ROOT",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Runoff %",
+      "target": 10,
+      "min": 9,
+      "max": 11,
+      "gate": "ROOT",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "VWC (%)",
+      "target": null,
+      "min": null,
+      "max": null,
+      "gate": "ROOT",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Irrigations in last 24h",
+      "target": 3,
+      "min": 2,
+      "max": 4,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "VWC% at last irrigation",
+      "target": 50,
+      "min": 49,
+      "max": 51,
+      "gate": "ROOT",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Overnight dryback % target",
+      "target": 30,
+      "min": 28.5,
+      "max": 31.5,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Target at first event",
+      "target": 20,
+      "min": 19,
+      "max": 21,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "P1 events",
+      "target": 3,
+      "min": 2,
+      "max": 4,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "P1 interval (min)",
+      "target": 30,
+      "min": 28.5,
+      "max": 31.5,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "P1 %",
+      "target": 13.4,
+      "min": 12.4,
+      "max": 14.4,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "ml per P1 event",
+      "target": 307,
+      "min": 297,
+      "max": 317,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Seconds per P1 event",
+      "target": null,
+      "min": null,
+      "max": null,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "P2 events",
+      "target": 9,
+      "min": 8,
+      "max": 10,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "P2 interval (min)",
+      "target": 60,
+      "min": 57,
+      "max": 63,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "P2 %",
+      "target": 3.9,
+      "min": 2.9,
+      "max": 4.9,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "ml per P2 event",
+      "target": 90,
+      "min": 85,
+      "max": 95,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Seconds per P2 event",
+      "target": null,
+      "min": null,
+      "max": null,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Runoff EC (mS/cm)",
+      "target": 4.5,
+      "min": 3.5,
+      "max": 5.5,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Lightcycle",
+      "target": null,
+      "min": null,
+      "max": null,
+      "gate": "ENV",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Container_gal",
+      "target": null,
+      "min": null,
+      "max": null,
+      "gate": "ROOT",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Mode",
+      "target": null,
+      "min": null,
+      "max": null,
+      "gate": "ENV",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Cycle",
+      "target": null,
+      "min": null,
+      "max": null,
+      "gate": "ENV",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "CO2 mode",
+      "target": null,
+      "min": null,
+      "max": null,
+      "gate": "ENV",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Reservoir EC (mS/cm)",
+      "target": 3,
+      "min": 2.8499999999999996,
+      "max": 3.1500000000000004,
+      "gate": "ROOT",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Reservoir pH",
+      "target": 5.8,
+      "min": 5.3999999999999995,
+      "max": 6.2,
+      "gate": "ROOT",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Reservoir temp (°C)",
+      "target": 22.7,
+      "min": 19.7,
+      "max": 25.7,
+      "gate": "ROOT",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "PWEC (mS/cm)",
+      "target": 5,
+      "min": 4,
+      "max": 6,
+      "gate": "IRR",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "Stage",
+      "target": null,
+      "min": null,
+      "max": null,
+      "gate": "ENV",
+      "units": null,
+      "notes": null
+    },
+    {
+      "metric": "8",
+      "target": null,
+      "min": null,
+      "max": null,
+      "gate": null,
+      "units": null,
+      "notes": null
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "Transpirational demand overload",
+      "gate": "env",
+      "message": "Water loss outruns root supply → edge burn, slowed growth. Pull: shrink VPD (raise RH / drop leaf temp) and tighten irrigation during peak."
+    },
+    {
+      "condition": "Evaporative dehydration stress",
+      "gate": "env",
+      "message": "Stomata clamp shut; photosynthesis and Ca transport drop. Pull: raise RH or lower temp, and ease drybacks (more frequent pulses)."
+    },
+    {
+      "condition": "Cumulative photoinhibition / oxidative stress",
+      "gate": "env",
+      "message": "Cumulative light dose exceeds carbon capacity → gradual bleach/necrosis. Pull: reduce DLI/peak PPFD or add CO₂ + keep leaf temp in range."
+    },
+    {
+      "condition": "CO₂-limited photosynthesis",
+      "gate": "env",
+      "message": "You’re light-saturated but carbon-limited → wasted photons. Pull: raise CO₂ with good mixing or lower PPFD."
+    },
+    {
+      "condition": "Rhizosphere acid stress → nutrient availability shift",
+      "gate": "root",
+      "message": "Acidic root zone locks out Ca/Mg/K and irritates roots. Pull: raise feed pH gradually and add leach to reset."
+    },
+    {
+      "condition": "Osmotic/ionic strength mismatch at roots",
+      "gate": "root",
+      "message": "Wrong strength drives either burn or starvation and unstable uptake. Pull: match recipe EC, recalibrate meter, and stabilize reservoir."
+    },
+    {
+      "condition": "pH-driven nutrient speciation mismatch",
+      "gate": "root",
+      "message": "Off-target pH makes nutrients unavailable (fake deficiencies). Pull: adjust feed to media range and confirm with runoff after 1–2 irrigations."
+    },
+    {
+      "condition": "Root-zone thermal stress",
+      "gate": "root",
+      "message": "Warm solution holds less O₂ → root stress and pathogen risk. Pull: cool feed/reservoir to 18–22°C and insulate."
+    },
+    {
+      "condition": "Rhizosphere salinity stratification",
+      "gate": "root",
+      "message": "Salts stack and burn root tips; uptake stalls. Pull: increase runoff/leach and tighten cadence until PWEC≈Bulk."
+    },
+    {
+      "condition": "Substrate water deficit",
+      "gate": "irr",
+      "message": "Media dries too far → EC spikes, wilt, stalled Ca flow. Pull: increase frequency/shot size and reduce dryback target."
+    },
+    {
+      "condition": "Root hypoxia",
+      "gate": "irr",
+      "message": "Roots suffocate → droop, slow growth, disease pressure. Pull: increase dryback between events, improve aeration/drainage, reduce saturation."
+    },
+    {
+      "condition": "Transpiration suppression",
+      "gate": "helper",
+      "message": "Transpiration is too low → sluggish uptake and soft tissue. Pull: raise VPD (dehumidify or raise temp) and add gentle airflow."
+    },
+    {
+      "condition": "Light-limited photosynthesis",
+      "gate": "helper",
+      "message": "Stretch and weak biomass → low trajectory. Pull: raise PPFD to stage and keep VPD/CO₂ matched."
+    },
+    {
+      "condition": "Chronic carbon starvation",
+      "gate": "helper",
+      "message": "Slow growth compounds over time → airy structure and missed yield. Pull: raise DLI consistently (not spikes) and support with CO₂/nutrition."
+    },
+    {
+      "condition": "P-limited energy metabolism",
+      "gate": "helper",
+      "message": "Energy transfer bottleneck → purpling and slowed growth. Pull: keep root temps up, hit pH range, and ensure balanced P (no PK hammering)."
+    },
+    {
+      "condition": "Biotic stress: powdery mildew infection",
+      "gate": "helper",
+      "message": "PM steals photosynthesis and spreads fast. Pull: lower RH/raise VPD, increase airflow, and run a PM-safe control rotation."
+    },
+    {
+      "condition": "Biotic stress: Botrytis infection risk",
+      "gate": "helper",
+      "message": "Grey mold rots dense sites—damage is permanent. Pull: prevent condensation (lower RH, dehumidify into lights-off), increase airflow, thin dense areas."
+    },
+    {
+      "condition": "Biotic stress: mite herbivory",
+      "gate": "helper",
+      "message": "Sap loss + stress → speckle, curl, stalled growth; explodes in hot-dry. Pull: isolate, implement rotation (biocontrol/miticide), and avoid hot-dry peaks."
+    },
+    {
+      "condition": "N-limited protein/chlorophyll synthesis",
+      "gate": "helper",
+      "message": "Uniform paling and slowed growth; yield potential drops. Pull: confirm pH/EC first, then raise N slightly within target EC."
+    },
+    {
+      "condition": "Mg-limited chlorophyll + enzyme cofactor supply",
+      "gate": "helper",
+      "message": "Interveinal chlorosis reduces photosynthesis. Pull: correct pH then add modest Mg (e.g., Epsom 0.25–0.5 g/L for 1–2 feeds)."
+    },
+    {
+      "condition": "K-driven osmotic imbalance",
+      "gate": "helper",
+      "message": "K crowds out Ca/Mg → crispy edges and stalled new growth. Pull: lower K/overall EC, add leach until PWEC≈Bulk, pause PK spikes."
+    },
+    {
+      "condition": "Fe-limited chloroplast electron transport",
+      "gate": "helper",
+      "message": "New growth yellows while veins stay greener; growth stalls. Pull: lower root-zone pH, address alkalinity, add chelated Fe, and keep top PPFD modest until corrected."
+    },
+    {
+      "condition": "Salinity/osmotic stress",
+      "gate": "helper",
+      "message": "High EC blocks water uptake → tip burn, droop, slow growth. Pull: gentle flush/leach to bring PWEC near Bulk, then resume 10–20% lower EC."
+    },
+    {
+      "condition": "Ca delivery failure",
+      "gate": "helper",
+      "message": "New growth distorts/tips burn because Ca can’t reach fast tissues. Pull: stabilize VPD (avoid extremes), add peak pulses (Ca rides transpiration), ensure Ca supply and healthy roots."
+    },
+    {
+      "condition": "Photoinhibition",
+      "gate": "env",
+      "message": "Photosystems overload → taco/bleach and stalled growth. Pull: reduce peak PPFD, cool leaf temps, improve airflow/uniformity."
+    },
+    {
+      "condition": "Rhizosphere alkalinity lockout",
+      "gate": "root",
+      "message": "High pH locks out Fe/Mn/Mg → chlorosis that won’t fix with more feed. Pull: lower feed pH gradually, reduce alkalinity, recheck runoff trend."
+    },
+    {
+      "condition": "Excess N → vegetative bias + osmotic imbalance",
+      "gate": "helper",
+      "message": "Too much N → dark claw, soft growth, delayed finish. Pull: reduce N/EC 10–20%, increase runoff briefly, keep PPFD/VPD sane."
+    },
+    {
+      "condition": "Photoperiodic induction",
+      "gate": "root",
+      "message": "Wrong photoperiod triggers early flower or stalls veg. Pull: keep veg hours stable (e.g., 18h) and control DLI via PPFD, not hours."
+    },
+    {
+      "condition": "Photoperiod reversion stress",
+      "gate": "root",
+      "message": "Light leaks/extra hours cause foxtails and re-veg traits. Pull: enforce 12h dark strict and eliminate leaks."
+    },
+    {
+      "condition": "Carbon limitation under high PPFD",
+      "gate": "env",
+      "message": "Light exceeds carbon supply → wasted watts and less yield. Pull: raise CO₂ (with mixing) or reduce PPFD; keep VPD steady."
+    },
+    {
+      "condition": "CO₂ oversupply under light/transport limitation",
+      "gate": "env",
+      "message": "High CO₂ at low light makes soft, stretchy growth and wastes gas. Pull: lower CO₂ setpoint or raise PPFD; keep VPD moderate."
+    },
+    {
+      "condition": "Rhizosphere salinity stratification",
+      "gate": "root",
+      "message": "Root-zone EC stratifies; hot pockets burn roots. Pull: increase leach/runoff and improve uniform wetting until PWEC≈Bulk."
+    },
+    {
+      "condition": "Nutrient depletion + rhizosphere pH instability",
+      "gate": "root",
+      "message": "Excess runoff washes ions and swings pH → drifting deficiencies. Pull: cut leach %, stabilize feed pH/alkalinity, raise EC modestly if needed."
+    },
+    {
+      "condition": "Chronic salt accumulation",
+      "gate": "root",
+      "message": "EC creeps up day after day → burn and stalled uptake. Pull: lower feed EC and add 10–20% runoff until PWEC converges."
+    },
+    {
+      "condition": "Macronutrient depletion",
+      "gate": "root",
+      "message": "Media gets depleted → pale growth and weak stems. Pull: raise EC slightly and reduce excessive runoff; confirm on new growth."
+    },
+    {
+      "condition": "Post-salinity recovery phase",
+      "gate": "root",
+      "message": "Post-flush plants can look hungry and unstable. Pull: return to balanced feed (slightly lower EC), keep pH steady, and monitor PWEC recovery."
+    },
+    {
+      "condition": "Heterogeneous wetting → spatial nutrient gradients",
+      "gate": "root",
+      "message": "Runoff lies because water bypasses media; salts hide in pockets. Pull: fix emitter coverage, saturate fully, and sample composite runoff."
+    },
+    {
+      "condition": "Alkalinity-driven buffering failure",
+      "gate": "root",
+      "message": "High alkalinity burns buffer and pushes pH up → micro lockout. Pull: RO blend/pretreat, control alkalinity, and keep feed pH consistent."
+    },
+    {
+      "condition": "NH₄⁺-driven rhizosphere acidification",
+      "gate": "root",
+      "message": "Too much NH₄ drives pH down and skews cations. Pull: shift toward nitrate‑N, raise pH slightly, and monitor new growth."
+    },
+    {
+      "condition": "Hypoxia-mediated root rot susceptibility",
+      "gate": "irr",
+      "message": "Low oxygen roots invite rot → chronic droop and stalled uptake. Pull: reduce saturation, increase aeration/drainage, sanitize, manage root temps."
+    },
+    {
+      "condition": "Ca mass-flow failure from water stress",
+      "gate": "irr",
+      "message": "Deep drybacks choke Ca flow → tip burn and brittle growth. Pull: shorten intervals/add peak pulses and avoid extreme VPD peaks."
+    },
+    {
+      "condition": "Hydraulic overdraw",
+      "gate": "env",
+      "message": "Demand > supply → margins burn even with ‘good’ feed. Pull: lower VPD/PPFD peaks and tighten irrigation during peak demand."
+    },
+    {
+      "condition": "Stomatal shutdown + humid boundary layer",
+      "gate": "env",
+      "message": "Closed stomata slow growth and raise in-canopy humidity → disease risk. Pull: bring VPD into band, stabilize airflow, avoid hard drybacks."
+    },
+    {
+      "condition": "Peak-intensity photoinhibition",
+      "gate": "env",
+      "message": "Peak PPFD is too spiky → tops burn while DLI looks fine. Pull: lower peak or raise fixtures; spread light over longer window."
+    },
+    {
+      "condition": "Low peak PPFD → weak photomorphogenesis",
+      "gate": "env",
+      "message": "Too low/flat peak gives stretch and airy structure. Pull: increase peak PPFD or improve uniformity while keeping total DLI sensible."
+    },
+    {
+      "condition": "Root hydraulic/uptake limitation",
+      "gate": "helper",
+      "message": "Plants aren’t actually taking up what you’re feeding. Pull: inspect roots, ensure full wetting/drain, and correct irrigation uniformity."
+    },
+    {
+      "condition": "Peak-demand water deficit",
+      "gate": "irr",
+      "message": "Long gaps during peak demand cause wilt then salt spikes. Pull: add mid‑peak pulses and shorten P1/P2 intervals."
+    },
+    {
+      "condition": "High photorespiration fraction",
+      "gate": "env",
+      "message": "Hot leaves + low CO₂ wastes energy instead of building biomass. Pull: lower leaf temp or raise CO₂; keep VPD stable."
+    },
+    {
+      "condition": "Stagnant microclimate",
+      "gate": "env",
+      "message": "Stagnant humid pockets waste CO₂ and favor pathogens. Pull: improve mixing/air exchange and control RH (especially lights‑off)."
+    },
+    {
+      "condition": "N supply-demand mismatch",
+      "gate": "env",
+      "message": "High light drives N demand; canopy will pale uniformly. Pull: increase N slightly (within EC target) or reduce DLI until balanced."
+    },
+    {
+      "condition": "Excess N → vegetative sink bias",
+      "gate": "env",
+      "message": "Too much N biases lush, weak growth and clawing. Pull: cut N 10–20% and keep PPFD/VPD appropriate."
+    },
+    {
+      "condition": "Latent salt stratification",
+      "gate": "root",
+      "message": "Salts are accumulating quietly; the spike is coming. Pull: introduce runoff now (10–20%) and tighten cadence."
+    },
+    {
+      "condition": "Cyclic dehydration–rewet injury",
+      "gate": "irr",
+      "message": "Big wet‑dry swings shred fine roots and slow uptake. Pull: tighten VWC band with smaller, more frequent events."
+    },
+    {
+      "condition": "Chronic hypoxia → reduced root renewal",
+      "gate": "irr",
+      "message": "Constant wet prevents root renewal and invites hypoxia. Pull: increase dryback targets and improve aeration/drainage."
+    },
+    {
+      "condition": "Hormone-driven elongation surge",
+      "gate": "root",
+      "message": "Current drivers will push extra stretch after flip. Pull: manage VPD/PPFD early post‑flip and get support/trellis installed before stretch peaks."
+    },
+    {
+      "condition": "Stomatal oscillation stress",
+      "gate": "env",
+      "message": "VPD swings yo‑yo stomata → stress and inconsistent uptake. Pull: tune controller gains and smooth lights-on/off transitions."
+    },
+    {
+      "condition": "Apical photobleaching",
+      "gate": "env",
+      "message": "Top layer is overexposed → bleaching/necrosis. Pull: raise/dim fixtures, improve uniformity, and cool leaf temps."
+    },
+    {
+      "condition": "Cold-induced metabolic slowdown",
+      "gate": "env",
+      "message": "Cold slows metabolism and nutrient uptake → purple, droop, stalled growth. Pull: raise canopy/root temps and avoid big night drops."
+    },
+    {
+      "condition": "Environmental predisposition to PM",
+      "gate": "env",
+      "message": "Your RH/VPD pattern favors PM. Pull: dehumidify, keep VPD above threshold, increase airflow, avoid leaf wetness."
+    },
+    {
+      "condition": "CO₂ oversupply under light limitation",
+      "gate": "env",
+      "message": "CO₂ is above what light can use → waste and soft stretch. Pull: lower CO₂ setpoint or raise PPFD; keep VPD steady."
+    },
+    {
+      "condition": "Botrytis susceptibility via bud wetness/humidity",
+      "gate": "helper",
+      "message": "Environment is primed for bud rot in dense sites. Pull: lower RH, dehumidify into lights‑off, increase airflow through canopy, thin hotspots."
+    },
+    {
+      "condition": "pH-driven nutrient lockout syndrome",
+      "gate": "root",
+      "message": "Symptoms persist because nutrients aren’t available, not because they’re missing. Pull: bring feed/runoff pH into range gradually and stabilize alkalinity."
+    },
+    {
+      "condition": "Hypoxic rhizosphere disease susceptibility",
+      "gate": "root",
+      "message": "Roots are oxygen-starved and disease-prone → chronic droop. Pull: increase dryback/aeration, sanitize, manage temps, avoid warm saturation."
+    },
+    {
+      "condition": "Ca/Mg cation imbalance",
+      "gate": "helper",
+      "message": "Cation ratios drift → edge burn, distortion, weak new growth. Pull: rebalance Ca:Mg, moderate PK/K spikes, keep pH stable."
+    },
+    {
+      "condition": "K–Mg competitive uptake inhibition",
+      "gate": "helper",
+      "message": "High K blocks Mg → edge burn + interveinal chlorosis. Pull: lower K/EC, add modest Mg, and reset PWEC≈Bulk."
+    },
+    {
+      "condition": "Inter-irrigation drought cycling",
+      "gate": "irr",
+      "message": "Gaps are too long → deep dryback and salt concentration. Pull: shorten intervals and add mid‑peak pulses."
+    },
+    {
+      "condition": "Incomplete substrate recharge",
+      "gate": "irr",
+      "message": "Shots don’t wet the root zone evenly → dry pockets and salt stacking. Pull: increase shot volume to full saturation with 10–15% runoff."
+    },
+    {
+      "condition": "Peak-demand Ca transport failure",
+      "gate": "irr",
+      "message": "High demand + deep dryback starves Ca to tips. Pull: add peak pulses, reduce dryback target, and moderate VPD."
+    },
+    {
+      "condition": "Acute thermal–hydraulic stress",
+      "gate": "env",
+      "message": "Leaves desiccate fast → wilt and scorch. Pull: drop leaf temp 2–3°C, raise RH, and irrigate immediately."
+    },
+    {
+      "condition": "Localized photobleaching from intensity hotspots",
+      "gate": "env",
+      "message": "One zone is getting cooked; averages are lying. Pull: flatten the intensity map (raise/dim/re-space fixtures) and cool tops."
+    },
+    {
+      "condition": "CO₂-limited photosynthesis under high PPFD",
+      "gate": "env",
+      "message": "High PPFD is capped by CO₂ availability. Pull: raise CO₂ with proper mixing or reduce PPFD peak."
+    },
+    {
+      "condition": "CO₂ oversupply under light limitation",
+      "gate": "env",
+      "message": "CO₂ is overfed for the light level. Pull: reduce CO₂ or raise PPFD; keep VPD stable."
+    },
+    {
+      "condition": "Peak PPFD photoinhibition",
+      "gate": "env",
+      "message": "Peak is too high even if DLI is okay. Pull: lower peak PPFD and spread the DLI across the day."
+    },
+    {
+      "condition": "Leaf thermal stress",
+      "gate": "env",
+      "message": "Leaf temp runs hot → stress and stalled uptake. Pull: reduce radiant load (raise/dim), increase airflow, improve cooling."
+    },
+    {
+      "condition": "Low transpiration + cold → mass-flow/uptake stall",
+      "gate": "env",
+      "message": "Cold + humid stalls transpiration → nutrient uptake drags. Pull: warm canopy/roots and raise VPD slightly."
+    },
+    {
+      "condition": "Leaf wetness/condensation episode",
+      "gate": "env",
+      "message": "Dew forms and disease follows. Pull: dehumidify into lights‑off, keep leaf temps above dewpoint, maintain gentle airflow."
+    },
+    {
+      "condition": "PM germination window",
+      "gate": "env",
+      "message": "Local RH pockets + low airflow let PM explode. Pull: increase mixing/defoliate dense zones and keep VPD above threshold."
+    },
+    {
+      "condition": "Botrytis infection window",
+      "gate": "env",
+      "message": "Dense, stagnant humidity rots from inside out. Pull: lower RH, increase canopy airflow, thin dense sites, avoid condensation."
+    },
+    {
+      "condition": "Gas-exchange oscillation",
+      "gate": "env",
+      "message": "Rapid VPD swings stress stomata and uptake. Pull: tune control gains and buffer with steady airflow/humidity."
+    },
+    {
+      "condition": "Forced-convection desiccation",
+      "gate": "env",
+      "message": "Wind + dry air strips the boundary layer → edge scorch. Pull: reduce fan intensity or lower VPD (raise RH)."
+    },
+    {
+      "condition": "Phytochrome-mediated shade avoidance",
+      "gate": "env",
+      "message": "Far‑red bias drives internode stretch. Pull: reduce far‑red, increase main PPFD, keep VPD moderate."
+    },
+    {
+      "condition": "UV-induced photodamage",
+      "gate": "env",
+      "message": "UV dose is damaging tissue, especially when hot. Pull: reduce UV exposure and keep leaf temps down."
+    },
+    {
+      "condition": "Photoperiodic flowering induction risk",
+      "gate": "env",
+      "message": "Daylength is pushing flowering signals in veg. Pull: keep veg photoperiod stable; control DLI with PPFD, not hours."
+    },
+    {
+      "condition": "Photoperiod reversion risk",
+      "gate": "env",
+      "message": "Light leaks or extended hours trigger foxtails/re‑veg traits. Pull: enforce strict 12h darkness and eliminate leaks."
+    },
+    {
+      "condition": "Peak-demand hydraulic deficit",
+      "gate": "irr",
+      "message": "Peak transpiration outpaces water supply → wilt and EC spikes. Pull: add mid‑peak pulses and shorten intervals during peak light."
+    },
+    {
+      "condition": "Chronic water deficit + salt concentration",
+      "gate": "irr",
+      "message": "No runoff for days = hidden salt stack + shrinking roots. Pull: rebuild schedule to full wetting + periodic runoff; confirm with composite runoff."
+    },
+    {
+      "condition": "Persistent saturation physiology",
+      "gate": "irr",
+      "message": "Media stays too wet → root oxygen debt. Pull: increase dryback between events and improve drainage/aeration."
+    },
+    {
+      "condition": "Insufficient recharge under high transpiration",
+      "gate": "irr",
+      "message": "Under high demand, small shots can’t keep up → dry pockets and spikes. Pull: increase shot size and/or frequency during peak."
+    },
+    {
+      "condition": "Excess leaching → nutrient dilution",
+      "gate": "irr",
+      "message": "Shots are so big they bypass media and dilute runoff readings. Pull: shrink shot size, keep frequency, avoid bypass drain."
+    },
+    {
+      "condition": "Drought × high vapor deficit",
+      "gate": "irr",
+      "message": "Dry media + dry air stacks stress fast. Pull: lower VPD and add pulses; avoid deep drybacks."
+    },
+    {
+      "condition": "Low dryback under humid conditions",
+      "gate": "irr",
+      "message": "Wet media + humid air = hypoxia and disease pressure. Pull: raise VPD and allow more dryback between events."
+    },
+    {
+      "condition": "Insufficient leach → salt accumulation",
+      "gate": "root",
+      "message": "Not enough leach to control rising EC. Pull: increase runoff % and lower feed EC until PWEC converges."
+    },
+    {
+      "condition": "Latent salt stratification",
+      "gate": "root",
+      "message": "Salt is building unseen; expect a jump. Pull: add controlled leach now and tighten cadence."
+    },
+    {
+      "condition": "Rhizosphere salinity stratification",
+      "gate": "root",
+      "message": "Hot pockets are much saltier than the average. Pull: increase leach and improve uniform wetting until PWEC drops toward Bulk."
+    },
+    {
+      "condition": "Bypass flow → under-fertilized zones",
+      "gate": "root",
+      "message": "Runoff is diluted by channeling; media may still be salty. Pull: fix distribution, pulse to full wetting, and take composite samples."
+    },
+    {
+      "condition": "Net nutrient loss via leaching",
+      "gate": "root",
+      "message": "Nutrients wash out faster than plants can use them. Pull: reduce leach %, stabilize pH, and restore EC gradually."
+    },
+    {
+      "condition": "High residual salinity + low uptake",
+      "gate": "root",
+      "message": "Salts stay high because roots aren’t drinking. Pull: lower EC, increase leach, and check root oxygen/temperature."
+    },
+    {
+      "condition": "Over-dilution / nutrient stripping",
+      "gate": "root",
+      "message": "Media is washing out; deficiencies are next. Pull: cut excessive runoff and bring feed EC back to target."
+    },
+    {
+      "condition": "Alkaline lockout of Fe/Mn/Mg",
+      "gate": "root",
+      "message": "Micros become unavailable → new growth chlorosis. Pull: lower pH/alkalinity and keep media in range."
+    },
+    {
+      "condition": "Acidic lockout/leaching of Ca/Mg/K",
+      "gate": "root",
+      "message": "Key cations get locked out → burn and weak structure. Pull: raise pH gradually and avoid ammonium-heavy feeds."
+    },
+    {
+      "condition": "Bicarbonate alkalinity load",
+      "gate": "root",
+      "message": "Bicarbonates push pH up over time. Pull: RO blend/pretreat and manage alkalinity before chasing pH."
+    },
+    {
+      "condition": "NH₄⁺ uptake acidifies rhizosphere",
+      "gate": "root",
+      "message": "NH₄ drives pH down and destabilizes Ca/Mg/K uptake. Pull: reduce NH₄ fraction, shift to nitrate, raise pH slightly."
+    },
+    {
+      "condition": "pH-induced nutrient dysfunction with visible symptoms",
+      "gate": "root",
+      "message": "Until pH stops drifting, symptoms won’t resolve. Pull: fix source alkalinity, stabilize feed pH, and recheck runoff trend."
+    },
+    {
+      "condition": "Cation imbalance with marginal necrosis",
+      "gate": "root",
+      "message": "Cation imbalance shows as margin burn/distortion. Pull: rebalance Ca:Mg, moderate K spikes, keep VPD and pH stable."
+    },
+    {
+      "condition": "K-driven Mg uptake inhibition",
+      "gate": "root",
+      "message": "Excess K blocks Mg uptake. Pull: lower K/EC, add modest Mg, and reset root-zone EC."
+    },
+    {
+      "condition": "Excess N under light limitation",
+      "gate": "root",
+      "message": "Too much N with too little light = dark claw and stretch. Pull: reduce N/EC or raise PPFD; keep VPD moderate."
+    },
+    {
+      "condition": "N limitation under high photon flux",
+      "gate": "root",
+      "message": "High light/fast growth outstrips N supply → uniform chlorosis. Pull: raise N slightly (within EC target) and ensure pH is in range."
+    },
+    {
+      "condition": "Na⁺/Cl⁻ toxicity",
+      "gate": "root",
+      "message": "Na/Cl accumulate, burn tips, and block uptake. Pull: audit water source, RO blend, and increase leach to purge."
+    },
+    {
+      "condition": "Rhizosphere–feed disequilibrium",
+      "gate": "root",
+      "message": "Feed isn’t driving media toward target; uptake stays unstable. Pull: adjust feed EC/pH and irrigation to drive PWEC≈Bulk."
+    },
+    {
+      "condition": "Warm-substrate hypoxia",
+      "gate": "root",
+      "message": "Warm + wet roots lose oxygen fast. Pull: cool root zone, improve aeration, reduce saturation."
+    },
+    {
+      "condition": "Root chilling → membrane transport slowdown",
+      "gate": "root",
+      "message": "Cold roots stop drinking → deficiencies show. Pull: warm feed/root zone to 18–22°C and insulate pots/lines."
+    },
+    {
+      "condition": "Warm feed → dissolved O₂ ↓ + root respiration ↑",
+      "gate": "root",
+      "message": "Hot nutrient solution stresses roots and reduces dissolved oxygen. Pull: cool reservoir/lines and avoid heat soak."
+    },
+    {
+      "condition": "Acute hydraulic failure",
+      "gate": "irr",
+      "message": "Plant will wilt fast and damage can happen same day. Pull: irrigate now and drop VPD (raise RH / lower temp)."
+    },
+    {
+      "condition": "Osmotic drought",
+      "gate": "irr",
+      "message": "Salt + drought creates osmotic lock → wilt despite irrigation. Pull: gentle flush to drop EC, then tighten cadence."
+    },
+    {
+      "condition": "Hydraulic overdraw → Ca delivery failure",
+      "gate": "env",
+      "message": "Demand exceeds root supply → margin burn. Pull: lower VPD/PPFD peaks and increase peak irrigation frequency."
+    },
+    {
+      "condition": "Stomatal shutdown syndrome",
+      "gate": "env",
+      "message": "Closed stomata throttles CO₂ and raises disease risk. Pull: bring VPD/leaf temp into band and remove the stress driver."
+    },
+    {
+      "condition": "Boundary-layer diffusion limitation",
+      "gate": "env",
+      "message": "Still air depletes CO₂ at the leaf surface. Pull: add canopy mixing/airflow and verify distribution."
+    },
+    {
+      "condition": "CO₂ oversupply with low transpiration",
+      "gate": "env",
+      "message": "CO₂ is present but stomata aren’t pulling. Pull: raise VPD slightly or lower CO₂ setpoint."
+    },
+    {
+      "condition": "Dehydration + CO₂ starvation",
+      "gate": "env",
+      "message": "Dry air closes stomata while CO₂ is already low. Pull: lower VPD and/or raise CO₂; stabilize irrigation."
+    },
+    {
+      "condition": "Dynamic stress: fluctuating light + stomatal lag",
+      "gate": "env",
+      "message": "Rapid light + VPD swings cause stomatal whiplash. Pull: smooth dimming curves and tune humidity/temperature control."
+    },
+    {
+      "condition": "Spatial heterogeneity stress",
+      "gate": "env",
+      "message": "Hotspots burn tops even when averages look safe. Pull: flatten intensity map and improve air mixing at canopy."
+    },
+    {
+      "condition": "Nighttime evaporative loss",
+      "gate": "env",
+      "message": "Overnight VPD dries media and leaf tissue too hard. Pull: lower night VPD and consider a pre‑lights‑off pulse."
+    },
+    {
+      "condition": "Stagnant canopy boundary layer",
+      "gate": "env",
+      "message": "Stale pockets become CO₂-poor and pathogen-friendly. Pull: increase circulation, thin dense sites, and improve air exchange."
+    },
+    {
+      "condition": "Low airflow → bud wetness",
+      "gate": "env",
+      "message": "Low airflow keeps buds wet → rot risk. Pull: increase airflow through canopy and keep RH controlled, especially at night."
+    },
+    {
+      "condition": "Hypoxia-mediated root pathogen susceptibility",
+      "gate": "root",
+      "message": "O₂-starved roots invite pathogens and chronic droop. Pull: increase dryback/aeration, sanitize, and manage temps."
+    },
+    {
+      "condition": "Hot-dry stress → pest flare",
+      "gate": "env",
+      "message": "Hot-dry stress primes pest explosions (mites) and weakens defenses. Pull: moderate VPD/leaf temp and run consistent IPM."
+    },
+    {
+      "condition": "Peak-time salinity stress",
+      "gate": "root",
+      "message": "High EC + low runoff during peak demand burns roots fast. Pull: lower feed EC and add 10–20% runoff during peak window."
+    },
+    {
+      "condition": "Low light → weak structural development",
+      "gate": "env",
+      "message": "Underlit plants stretch and build weak structure. Pull: raise PPFD/uniformity and keep VPD moderate to control internodes."
+    },
+    {
+      "condition": "Chronic carbon limitation trajectory",
+      "gate": "env",
+      "message": "Not enough photons day after day → slow biomass accumulation. Pull: increase DLI to stage target (gradually) and support with CO₂."
+    },
+    {
+      "condition": "Cumulative photoinhibition / oxidative stress load",
+      "gate": "env",
+      "message": "Daily light load is too high for carbon processing → cumulative burn. Pull: reduce DLI/peaks or raise CO₂ and manage leaf temp."
+    },
+    {
+      "condition": "Low peak PPFD → photomorphogenesis under-stimulated",
+      "gate": "env",
+      "message": "Peak is too low/flat → airy structure even if DLI adds up. Pull: increase peak PPFD or improve distribution."
+    },
+    {
+      "condition": "Non-uniform wetting → patchy root function",
+      "gate": "irr",
+      "message": "Some zones are dry/salty while others drain—bad data and worse roots. Pull: audit emitters, ensure full wetting, and sample composite runoff."
+    },
+    {
+      "condition": "High-demand drought episodes",
+      "gate": "irr",
+      "message": "Skipping irrigations during high demand causes crashes. Pull: add alarms and schedule pulses in the peak light/VPD window."
+    },
+    {
+      "condition": "Dryback-driven concentration",
+      "gate": "root",
+      "message": "Long gaps concentrate salts in the root zone. Pull: shorten intervals and include periodic runoff to control EC."
+    },
+    {
+      "condition": "Excess frequency → nutrient washout",
+      "gate": "root",
+      "message": "Too-frequent leaching strips media and drives deficiencies. Pull: lengthen intervals or reduce runoff; restore EC to target."
+    },
+    {
+      "condition": "CO₂ delivery limited by poor mixing",
+      "gate": "env",
+      "message": "High CO₂ without mixing creates dead zones and waste. Pull: fix circulation/air exchange before raising CO₂ setpoint."
+    },
+    {
+      "condition": "Combined osmotic + hydraulic stress",
+      "gate": "root",
+      "message": "Triple stress fries leaf margins. Pull: lower EC, reduce VPD peaks, and tighten irrigation during peak."
+    },
+    {
+      "condition": "Nutrient supply limitation under high carbon demand",
+      "gate": "root",
+      "message": "High DLI demands more nutrition; canopy pales. Pull: raise EC/N slightly (or reduce DLI temporarily) and confirm pH."
+    },
+    {
+      "condition": "Persistent saturation pattern",
+      "gate": "irr",
+      "message": "VWC stays high and flat → hypoxic roots and slow uptake. Pull: increase dryback and reduce frequency/shot size."
+    },
+    {
+      "condition": "Hydraulic oscillation injury",
+      "gate": "irr",
+      "message": "Large swings damage fine roots and slow recovery. Pull: stabilize VWC with smaller, more frequent pulses."
+    },
+    {
+      "condition": "Heat/light-induced leaf curling",
+      "gate": "helper",
+      "message": "Taco leaves are often heat/light, not N toxicity. Pull: check leaf temp/PPFD and airflow before cutting N."
+    },
+    {
+      "condition": "Abrupt light-step shock",
+      "gate": "env",
+      "message": "Big DLI jump shocks plants at flip. Pull: ramp PPFD/DLI gradually while keeping VPD/CO₂ aligned."
+    },
+    {
+      "condition": "Whole-plant chilling",
+      "gate": "env",
+      "message": "Cold air + roots slow uptake and metabolism across the board. Pull: raise canopy/root temps 2–3°C and reduce night drops."
+    },
+    {
+      "condition": "High vapor deficit → xylem tension/cavitation risk",
+      "gate": "env",
+      "message": "Big dewpoint gap dries tissue fast and closes stomata. Pull: raise RH or lower temp to shrink the gap; keep gentle airflow."
+    },
+    {
+      "condition": "Control-induced VPD instability",
+      "gate": "env",
+      "message": "VPD spikes create burn and inconsistent uptake. Pull: tame controller gains and buffer with steady airflow/humidification."
+    },
+    {
+      "condition": "High humidity → low lignification/structural investment",
+      "gate": "env",
+      "message": "Too soft (low VPD / low light) builds weak tissue and stretch. Pull: raise VPD slightly and bring PPFD/DLI up to stage."
+    },
+    {
+      "condition": "Localized thermal/photonic hotspots",
+      "gate": "env",
+      "message": "Local PPFD/heat peaks bleach tops first. Pull: flatten intensity map (raise/dim/spread fixtures) and improve cooling/mixing."
+    },
+    {
+      "condition": "Fluctuating light signaling",
+      "gate": "env",
+      "message": "Erratic photoperiod/dimming confuses plant signaling. Pull: keep photoperiod strict and smooth dimming curves."
+    },
+    {
+      "condition": "Progressive alkalization → micronutrient availability decline",
+      "gate": "root",
+      "message": "pH is drifting up; micro lockouts are next. Pull: feed slightly lower pH, check alkalinity, and monitor runoff trend."
+    },
+    {
+      "condition": "Residual salt retention in media",
+      "gate": "root",
+      "message": "Poor uptake leaves salts behind → rising PWEC. Pull: add a bit more leach and lower feed EC until uptake recovers."
+    },
+    {
+      "condition": "Dryback-driven salinity concentration",
+      "gate": "root",
+      "message": "Drybacks concentrate EC and stress roots. Pull: reduce dryback amplitude and add a mid‑peak pulse."
+    },
+    {
+      "condition": "Source-water ionic/alkalinity load",
+      "gate": "root",
+      "message": "High alkalinity/Na/Cl drives pH drift and toxicity. Pull: RO blend/pretreat and monitor source alkalinity/EC."
+    },
+    {
+      "condition": "Combined saturation + low O₂ → root respiration failure",
+      "gate": "root",
+      "message": "Wet media + low oxygen stalls roots and invites disease. Pull: increase dryback/aeration and manage root temps."
+    },
+    {
+      "condition": "Rapid expansion with low transpiration",
+      "gate": "env",
+      "message": "High light with low transpiration increases Ca issues and soft tissue. Pull: raise VPD modestly and ensure Ca supply + peak pulses."
+    },
+    {
+      "condition": "Excess frequency → chronic hypoxia risk",
+      "gate": "irr",
+      "message": "Too many events keep the root zone saturated. Pull: lengthen intervals and hit your dryback target."
+    },
+    {
+      "condition": "Oversized pulses → leach/dilution + transient hypoxia",
+      "gate": "irr",
+      "message": "Shots are too big → bypass drain and unstable EC. Pull: reduce shot size and maintain frequency; target clean runoff %."
+    },
+    {
+      "condition": "CO₂ stratification from poor mixing",
+      "gate": "env",
+      "message": "CO₂ setpoint is high but distribution is poor. Pull: increase mixing/air exchange before raising CO₂."
+    },
+    {
+      "condition": "Cold feed shock → root membrane transport inhibition",
+      "gate": "root",
+      "message": "Cold feed chills roots and stalls uptake. Pull: warm reservoir/lines to 18–22°C and insulate."
+    },
+    {
+      "condition": "High leach fraction → nutrient dilution/depletion",
+      "gate": "root",
+      "message": "Excess leach washes nutrients out and destabilizes pH. Pull: reduce runoff % and restore EC to target."
+    },
+    {
+      "condition": "Overnight substrate depletion",
+      "gate": "irr",
+      "message": "Overnight depletion stresses roots and spikes EC at lights-on. Pull: lower night VPD and/or add a pre‑lights‑off pulse."
+    },
+    {
+      "condition": "Acute thermal–hydraulic shock",
+      "gate": "env",
+      "message": "Rapid dehydration → wilt and edge scorch. Pull: drop leaf temp, raise RH, and irrigate immediately."
+    },
+    {
+      "condition": "Photothermal injury",
+      "gate": "env",
+      "message": "High PPFD + hot leaves cooks tops. Pull: reduce peak PPFD, cool leaves, and improve airflow/uniformity."
+    },
+    {
+      "condition": "Apical photobleaching from hot/dry stress",
+      "gate": "env",
+      "message": "Hotspot + high VPD bleaches new growth fast. Pull: flatten light map and bring VPD to mid‑band."
+    },
+    {
+      "condition": "CO₂-limited photosynthesis under high excitation",
+      "gate": "env",
+      "message": "Photons exceed CO₂ supply → wasted light and stalled growth. Pull: raise CO₂ with mixing or dim PPFD."
+    },
+    {
+      "condition": "CO₂ oversupply + stagnant boundary layer",
+      "gate": "env",
+      "message": "CO₂ pools and pathogens love the stagnant air. Pull: increase mixing/air exchange and align CO₂ to PPFD."
+    },
+    {
+      "condition": "Lights-off condensation episode",
+      "gate": "env",
+      "message": "Condensation at lights-off kickstarts PM/Botrytis. Pull: dehumidify before/during lights-off and keep leaf temps above dewpoint."
+    },
+    {
+      "condition": "PM infection window",
+      "gate": "env",
+      "message": "Environment is in PM’s comfort zone. Pull: raise VPD, increase airflow, and run PM controls."
+    },
+    {
+      "condition": "Botrytis infection window",
+      "gate": "env",
+      "message": "Humidity + density primes grey mold. Pull: lower RH, thin dense sites, increase airflow, prevent condensation."
+    },
+    {
+      "condition": "Physiological whiplash from oscillating light/VPD",
+      "gate": "env",
+      "message": "Temp/RH swings stress stomata and uptake. Pull: tune controller gains and smooth transitions."
+    },
+    {
+      "condition": "Spatial transpiration mismatch → root-zone moisture swings",
+      "gate": "env",
+      "message": "Uneven light/heat causes uneven VWC and EC. Pull: improve uniformity and zone irrigation if needed."
+    },
+    {
+      "condition": "Stomatal closure → carbon starvation under dehydration",
+      "gate": "env",
+      "message": "Dry air closes stomata while CO₂ is low → carbon crash. Pull: lower VPD and raise CO₂ (or dim PPFD)."
+    },
+    {
+      "condition": "CO₂ oversupply under low transpiration",
+      "gate": "env",
+      "message": "Low VPD keeps stomata lazy → CO₂ wasted. Pull: raise VPD slightly or lower CO₂ setpoint."
+    },
+    {
+      "condition": "Shade-avoidance etiolation",
+      "gate": "env",
+      "message": "Low PPFD makes stretch unavoidable. Pull: raise PPFD/DLI and keep VPD moderate to tighten internodes."
+    },
+    {
+      "condition": "UV + heat oxidative injury",
+      "gate": "env",
+      "message": "UV + hot leaves bleaches tissue. Pull: reduce UV dose and lower leaf temps/PPFD peaks."
+    },
+    {
+      "condition": "Phytochrome-mediated elongation syndrome",
+      "gate": "env",
+      "message": "Far‑red bias amplifies stretch. Pull: reduce far‑red and increase main PPFD/VPD balance."
+    },
+    {
+      "condition": "Stagnant humid boundary layer",
+      "gate": "env",
+      "message": "Stale humid air = disease + poor CO₂ use. Pull: increase mixing, thin canopy, and dehumidify."
+    },
+    {
+      "condition": "Forced desiccation injury at leaf margins",
+      "gate": "env",
+      "message": "Excess fan + dry air strips edges. Pull: reduce fan intensity and/or raise RH (lower VPD)."
+    },
+    {
+      "condition": "Photoperiod signaling disruption under high energy load",
+      "gate": "env",
+      "message": "Photoperiod/DLI changes are too aggressive → stress/foxtails. Pull: correct photoperiod and ramp PPFD gradually."
+    },
+    {
+      "condition": "Localized carbon starvation + thermal hotspots",
+      "gate": "env",
+      "message": "Hot bright hotspots bleach first when CO₂ is limiting. Pull: fix mixing/CO₂ distribution and reduce hotspots."
+    },
+    {
+      "condition": "Apical hydraulic–thermal stress",
+      "gate": "env",
+      "message": "Top canopy dries and burns. Pull: cool tops (raise/dim) and bring VPD into band."
+    },
+    {
+      "condition": "Extreme vapor deficit → cavitation/leaf desiccation risk",
+      "gate": "env",
+      "message": "Multiple drivers push dehydration beyond uptake capacity. Pull: lower VPD, tighten irrigation cadence, and watch leaf temps."
+    },
+    {
+      "condition": "Stomatal shutdown–driven carbon starvation",
+      "gate": "env",
+      "message": "Stomata clamp; carbon + Ca transport crash. Pull: raise RH/lower temp, raise CO₂ (with mixing), and avoid deep drybacks."
+    },
+    {
+      "condition": "Warm saturated rhizosphere hypoxia",
+      "gate": "root",
+      "message": "Warm, wet roots lose oxygen fast → droop and disease pressure. Pull: cool feed (18–22°C), increase aeration, reduce saturation."
+    },
+    {
+      "condition": "Rhizosphere acidification syndrome",
+      "gate": "root",
+      "message": "pH drop locks out Ca/Mg/K and stresses roots. Pull: raise feed pH gradually and add leach to reset."
+    },
+    {
+      "condition": "Rhizosphere alkalization syndrome",
+      "gate": "root",
+      "message": "pH rise locks out Fe/Mn/Mg → chlorosis. Pull: lower feed pH, fix alkalinity (RO/acid), recheck runoff trend."
+    },
+    {
+      "condition": "Salt stratification syndrome",
+      "gate": "root",
+      "message": "Root-zone EC climbs daily → burn and stalled uptake. Pull: lower feed EC and raise runoff % until PWEC≈Bulk."
+    },
+    {
+      "condition": "Nutrient washout syndrome",
+      "gate": "root",
+      "message": "Too much runoff strips nutrients → pale growth. Pull: reduce leach % and restore EC to target."
+    },
+    {
+      "condition": "Warm, wet pathogen-pressure syndrome",
+      "gate": "root",
+      "message": "Compromised roots can’t uptake → chronic droop. Pull: increase oxygen (dryback/aeration), sanitize, manage temps, consider biologicals."
+    },
+    {
+      "condition": "Persistent hypoxia syndrome",
+      "gate": "root",
+      "message": "Media stays wet → hypoxic roots and slow growth. Pull: lengthen intervals and hit proper dryback; improve drainage."
+    },
+    {
+      "condition": "Low-leach accumulation syndrome",
+      "gate": "root",
+      "message": "Runoff is too low → salts build. Pull: add 10–20% leach temporarily and shorten peak gaps."
+    },
+    {
+      "condition": "High-leach dilution syndrome",
+      "gate": "root",
+      "message": "Runoff is too high → media drains out and deficiencies drift. Pull: cut leach % and raise EC modestly."
+    },
+    {
+      "condition": "Cation imbalance syndrome",
+      "gate": "root",
+      "message": "Cation imbalance shows as edge burn/distortion/chlorosis. Pull: rebalance Ca:Mg, moderate K/PK spikes, stabilize pH."
+    },
+    {
+      "condition": "Mg uptake antagonism syndrome",
+      "gate": "root",
+      "message": "High K blocks Mg → interveinal chlorosis + edge burn. Pull: lower K/EC, add modest Mg, reset PWEC."
+    },
+    {
+      "condition": "Alkaline lockout syndrome",
+      "gate": "root",
+      "message": "High pH locks micros; feeding more won’t help. Pull: lower pH/alkalinity and recheck runoff after 1–2 irrigations."
+    },
+    {
+      "condition": "Acidic lockout/toxicity syndrome",
+      "gate": "root",
+      "message": "Low pH locks Ca/Mg/PK and irritates roots. Pull: raise pH gradually and reduce ammonium bias."
+    },
+    {
+      "condition": "Sodicity–alkalinity syndrome",
+      "gate": "root",
+      "message": "Na + alkalinity drives toxicity and pH drift. Pull: RO blend, purge with leach, and manage alkalinity."
+    },
+    {
+      "condition": "Media nutrient depletion syndrome",
+      "gate": "root",
+      "message": "Media EC is falling too fast → starvation trajectory. Pull: raise feed EC and reduce excessive runoff."
+    },
+    {
+      "condition": "Trapped-salt syndrome",
+      "gate": "root",
+      "message": "EC is high and you aren’t flushing it → burn risk. Pull: increase runoff % and lower feed EC until converged."
+    },
+    {
+      "condition": "Media–feed EC disequilibrium syndrome",
+      "gate": "root",
+      "message": "Feed and media aren’t converging—schedule mismatch. Pull: adjust shot/interval/runoff to drive PWEC≈Bulk."
+    },
+    {
+      "condition": "Nitrogen limitation under high photon flux",
+      "gate": "root",
+      "message": "High light drives N demand → uniform chlorosis incoming. Pull: increase N/EC slightly or reduce DLI until stable."
+    },
+    {
+      "condition": "Peak-demand hydraulic starvation",
+      "gate": "irr",
+      "message": "Peak demand outpaces irrigation → wilt and Ca issues. Pull: add mid‑peak pulses and shorten intervals."
+    },
+    {
+      "condition": "Over-saturation + nutrient waste syndrome",
+      "gate": "irr",
+      "message": "Too much water too fast → runoff waste and hypoxia. Pull: reduce shot size, space events, improve drainage."
+    },
+    {
+      "condition": "Hydraulic oscillation syndrome",
+      "gate": "irr",
+      "message": "Undersized schedule causes big VWC swings → stress and salt spikes. Pull: increase frequency and/or shot size to stabilize VWC band."
+    },
+    {
+      "condition": "Acute wilting event",
+      "gate": "irr",
+      "message": "Dry + hot without irrigation is an emergency. Pull: irrigate now and lower VPD/leaf temp."
+    },
+    {
+      "condition": "Chronic saturation cadence",
+      "gate": "irr",
+      "message": "Cadence keeps media saturated → oxygen debt. Pull: lengthen intervals and hit dryback targets."
+    },
+    {
+      "condition": "Salt stacking from inadequate leach",
+      "gate": "irr",
+      "message": "Low runoff lets salts accumulate. Pull: raise runoff % (10–20%) and lower feed EC until reset."
+    },
+    {
+      "condition": "Nutrient dilution from excessive leach",
+      "gate": "irr",
+      "message": "Too much runoff strips nutrients and destabilizes pH. Pull: reduce runoff % and restore EC."
+    },
+    {
+      "condition": "Peak-window drought stress",
+      "gate": "irr",
+      "message": "Skipping peak-window irrigations causes daily crashes. Pull: schedule pulses during peak light/VPD and add alarms."
+    },
+    {
+      "condition": "Chronic under-irrigation syndrome",
+      "gate": "irr",
+      "message": "Too little water with long gaps → deep dryback and salt stacking. Pull: shorten gaps and increase shot volume."
+    },
+    {
+      "condition": "Chronic over-irrigation syndrome",
+      "gate": "irr",
+      "message": "Overwatering with bypass drain → hypoxia + bad data. Pull: shrink shot size and keep frequency."
+    },
+    {
+      "condition": "No-dryback oversaturation syndrome",
+      "gate": "irr",
+      "message": "VWC stays flat because shots are drowning the media. Pull: reduce shot size and allow real dryback."
+    },
+    {
+      "condition": "No-recharge undershoot syndrome",
+      "gate": "irr",
+      "message": "VWC stays low because shots don’t wet fully. Pull: increase shot size to full saturation and confirm uniform wetting."
+    },
+    {
+      "condition": "No-drain accumulation syndrome",
+      "gate": "irr",
+      "message": "No runoff for days = hidden salt stack. Pull: rebuild schedule with periodic runoff; verify PWEC."
+    },
+    {
+      "condition": "Spatial water-availability heterogeneity syndrome",
+      "gate": "irr",
+      "message": "Different zones transpire differently; one size won’t fit all. Pull: improve uniformity and zone irrigation/emitters if needed."
+    },
+    {
+      "condition": "Acute hydraulic–thermal failure",
+      "gate": "env",
+      "message": "Dehydration stress is maxed → burn risk. Pull: irrigate now, lower VPD, cool leaves."
+    },
+    {
+      "condition": "Heat-amplified under-irrigation syndrome",
+      "gate": "irr",
+      "message": "Heat + long gaps causes repeat wilt cycles. Pull: add mid‑peak pulses and increase shot/shorten intervals."
+    },
+    {
+      "condition": "Salinity + water-starvation syndrome",
+      "gate": "root",
+      "message": "Strong feed + not enough water burns roots fast. Pull: lower EC 10–20% and increase frequency/runoff to reset."
+    },
+    {
+      "condition": "Thermal–hydraulic stress with salinity accumulation",
+      "gate": "root",
+      "message": "VPD stress plus salt stacking = edge burn recipe. Pull: lower VPD and leach to bring PWEC≈Bulk."
+    },
+    {
+      "condition": "Acute thermal–hydraulic shock",
+      "gate": "env",
+      "message": "Rapid dehydration → wilt and scorch. Pull: drop leaf temp, raise RH, and irrigate immediately."
+    },
+    {
+      "condition": "Salinity + water-starvation syndrome",
+      "gate": "root",
+      "message": "Strong feed + inadequate cadence burns roots fast. Pull: lower EC and increase frequency/runoff until stable."
+    },
+    {
+      "condition": "Chronic under-irrigation syndrome",
+      "gate": "irr",
+      "message": "Long gaps and tiny shots create dry pockets and spikes. Pull: shorten gaps and increase shot size."
+    },
+    {
+      "condition": "Canopy heat stress physiology",
+      "gate": "env",
+      "message": "Hot canopy drives photoinhibition and dehydration. Pull: reduce radiant load (raise/dim), improve cooling and airflow, keep VPD mid‑band."
+    },
+    {
+      "condition": "Canopy chilling physiology",
+      "gate": "env",
+      "message": "Cold canopy stalls metabolism and uptake. Pull: raise air/leaf temps 2–3°C and avoid big night drops."
+    },
+    {
+      "condition": "Low humidity → high evaporative demand",
+      "gate": "env",
+      "message": "Air is too dry → stomata close and edges burn. Pull: humidify or lower temp to bring VPD into band."
+    },
+    {
+      "condition": "High humidity → transpiration suppression",
+      "gate": "env",
+      "message": "Air is too wet → slow uptake and disease risk. Pull: dehumidify, raise VPD, and increase airflow (especially lights‑off)."
+    },
+    {
+      "condition": "Post-hypoxia recovery phase",
+      "gate": "helper",
+      "message": "Droop is oxygen debt, not thirst; more water makes it worse. Pull: increase dryback, improve aeration, and let roots breathe before resuming normal cadence."
+    },
+    {
+      "condition": "Ca delivery failure",
+      "gate": "helper",
+      "message": "New growth distortion/tip burn from weak Ca delivery. Pull: stabilize VPD, add peak pulses, ensure adequate Ca and root oxygen."
+    },
+    {
+      "condition": "Heat stress syndrome",
+      "gate": "env",
+      "message": "Heat accelerates dehydration and damages tops. Pull: lower leaf temp, raise RH slightly (to drop VPD), and dim peaks if needed."
+    },
+    {
+      "condition": "Acidic rhizosphere",
+      "gate": "root",
+      "message": "Acidic media locks out Ca/Mg/K and stresses roots. Pull: raise feed pH gradually and add leach; recheck after 1–2 irrigations."
+    },
+    {
+      "condition": "Alkaline rhizosphere",
+      "gate": "root",
+      "message": "Alkaline media locks out Fe/Mn/Mg → chlorosis. Pull: lower feed pH, fix alkalinity, and recheck runoff trend."
+    },
+    {
+      "condition": "Nocturnal substrate depletion",
+      "gate": "irr",
+      "message": "Overnight depletion is too aggressive → morning stress and EC spikes. Pull: shorten night interval/shot, lower night VPD, consider pre‑lights‑off pulse."
+    },
+    {
+      "condition": "Overnight saturation",
+      "gate": "irr",
+      "message": "Media stays too wet overnight → hypoxia risk and slow renewal. Pull: lengthen night interval or reduce late-day irrigation to hit dryback target."
+    }
+  ],
+  "stageProfiles": [
+    {
+      "key": "early veg|18|day|co2|sharkmousefarms",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 750,
+      "vpd_air_kpa": 1.24,
+      "tair_c": 26.66666667,
+      "rh_percent": 64,
+      "ppfd_umol": 400,
+      "dli_mol": 25.9
+    },
+    {
+      "key": "early veg|18|night|co2|sharkmousefarms",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.28,
+      "tair_c": 24.44444444,
+      "rh_percent": 60,
+      "ppfd_umol": 0,
+      "dli_mol": 25.9
+    },
+    {
+      "key": "late veg|18|day|co2|sharkmousefarms",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 900,
+      "vpd_air_kpa": 1.46,
+      "tair_c": 26.66666667,
+      "rh_percent": 59,
+      "ppfd_umol": 800,
+      "dli_mol": 51.9
+    },
+    {
+      "key": "late veg|18|night|co2|sharkmousefarms",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.36,
+      "tair_c": 24.44444444,
+      "rh_percent": 56,
+      "ppfd_umol": 0,
+      "dli_mol": 51.9
+    },
+    {
+      "key": "early bloom|12|day|co2|sharkmousefarms",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 1200,
+      "vpd_air_kpa": 1.54,
+      "tair_c": 26.11111111,
+      "rh_percent": 55,
+      "ppfd_umol": 1100,
+      "dli_mol": 47.5
+    },
+    {
+      "key": "early bloom|12|night|co2|sharkmousefarms",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.41,
+      "tair_c": 22.77777778,
+      "rh_percent": 50,
+      "ppfd_umol": 0,
+      "dli_mol": 47.5
+    },
+    {
+      "key": "mid bloom|12|day|co2|sharkmousefarms",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 1200,
+      "vpd_air_kpa": 1.41,
+      "tair_c": 26.11111111,
+      "rh_percent": 59,
+      "ppfd_umol": 1200,
+      "dli_mol": 51.8
+    },
+    {
+      "key": "mid bloom|12|night|co2|sharkmousefarms",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.34,
+      "tair_c": 21.66666667,
+      "rh_percent": 49,
+      "ppfd_umol": 0,
+      "dli_mol": 51.8
+    },
+    {
+      "key": "late bloom|12|day|co2|sharkmousefarms",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 1200,
+      "vpd_air_kpa": 1.73,
+      "tair_c": 25.55555556,
+      "rh_percent": 48,
+      "ppfd_umol": 1200,
+      "dli_mol": 51.8
+    },
+    {
+      "key": "late bloom|12|night|co2|sharkmousefarms",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 21.11111111,
+      "rh_percent": 38,
+      "ppfd_umol": 0,
+      "dli_mol": 51.8
+    },
+    {
+      "key": "flush|12|day|co2|sharkmousefarms",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 950,
+      "vpd_air_kpa": 1.68,
+      "tair_c": 23.88888889,
+      "rh_percent": 44,
+      "ppfd_umol": 900,
+      "dli_mol": 41
+    },
+    {
+      "key": "flush|12|night|co2|sharkmousefarms",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 21.11111111,
+      "rh_percent": 38,
+      "ppfd_umol": 0,
+      "dli_mol": 41
+    },
+    {
+      "key": "early veg|18|day|no_co2|sharkmousefarms",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.21,
+      "tair_c": 26.66666667,
+      "rh_percent": 66,
+      "ppfd_umol": 400,
+      "dli_mol": 25.9
+    },
+    {
+      "key": "early veg|18|night|no_co2|sharkmousefarms",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.28,
+      "tair_c": 24.44444444,
+      "rh_percent": 60,
+      "ppfd_umol": 0,
+      "dli_mol": 25.9
+    },
+    {
+      "key": "late veg|18|day|no_co2|sharkmousefarms",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.39,
+      "tair_c": 26.66666667,
+      "rh_percent": 61,
+      "ppfd_umol": 800,
+      "dli_mol": 51.9
+    },
+    {
+      "key": "late veg|18|night|no_co2|sharkmousefarms",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.36,
+      "tair_c": 24.44444444,
+      "rh_percent": 56,
+      "ppfd_umol": 0,
+      "dli_mol": 51.9
+    },
+    {
+      "key": "early bloom|12|day|no_co2|sharkmousefarms",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.44,
+      "tair_c": 26.11111111,
+      "rh_percent": 58,
+      "ppfd_umol": 950,
+      "dli_mol": 47.5
+    },
+    {
+      "key": "early bloom|12|night|no_co2|sharkmousefarms",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.41,
+      "tair_c": 22.77777778,
+      "rh_percent": 50,
+      "ppfd_umol": 0,
+      "dli_mol": 47.5
+    },
+    {
+      "key": "mid bloom|12|day|no_co2|sharkmousefarms",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.61,
+      "tair_c": 26.11111111,
+      "rh_percent": 53,
+      "ppfd_umol": 950,
+      "dli_mol": 47.5
+    },
+    {
+      "key": "mid bloom|12|night|no_co2|sharkmousefarms",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 21.66666667,
+      "rh_percent": 44,
+      "ppfd_umol": 0,
+      "dli_mol": 47.5
+    },
+    {
+      "key": "late bloom|12|day|no_co2|sharkmousefarms",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.66,
+      "tair_c": 25.55555556,
+      "rh_percent": 50,
+      "ppfd_umol": 900,
+      "dli_mol": 38.8
+    },
+    {
+      "key": "late bloom|12|night|no_co2|sharkmousefarms",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 21.11111111,
+      "rh_percent": 38,
+      "ppfd_umol": 0,
+      "dli_mol": 38.8
+    },
+    {
+      "key": "flush|12|day|no_co2|sharkmousefarms",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.65,
+      "tair_c": 23.88888889,
+      "rh_percent": 45,
+      "ppfd_umol": 750,
+      "dli_mol": 32.4
+    },
+    {
+      "key": "flush|12|night|no_co2|sharkmousefarms",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 21.11111111,
+      "rh_percent": 38,
+      "ppfd_umol": 0,
+      "dli_mol": 32.4
+    },
+    {
+      "key": "phase|container_gal|media|vwc_last|sharkmousefarms",
+      "phase": "phase",
+      "photoperiod_h": null,
+      "lightcycle": "media",
+      "co2_mode": "vwc_last",
+      "co2_ppm": null,
+      "vpd_air_kpa": null,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "early veg|1|coco|60|sharkmousefarms",
+      "phase": "early veg",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "60",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 50,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 8.3,
+      "dli_mol": 230
+    },
+    {
+      "key": "late veg|1|coco|55|sharkmousefarms",
+      "phase": "late veg",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 45,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 9.1,
+      "dli_mol": 230
+    },
+    {
+      "key": "early bloom|1|coco|55|sharkmousefarms",
+      "phase": "early bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 30,
+      "tair_c": 4,
+      "rh_percent": 30,
+      "ppfd_umol": 11.4,
+      "dli_mol": 288
+    },
+    {
+      "key": "mid bloom|1|coco|50|sharkmousefarms",
+      "phase": "mid bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 30,
+      "vpd_air_kpa": 20,
+      "tair_c": 3,
+      "rh_percent": 30,
+      "ppfd_umol": 13.4,
+      "dli_mol": 307
+    },
+    {
+      "key": "late bloom|1|coco|50|sharkmousefarms",
+      "phase": "late bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 25,
+      "tair_c": 4,
+      "rh_percent": 60,
+      "ppfd_umol": 12.5,
+      "dli_mol": 288
+    },
+    {
+      "key": "flush|1|coco|50|sharkmousefarms",
+      "phase": "flush",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 30,
+      "vpd_air_kpa": 20,
+      "tair_c": 3,
+      "rh_percent": 30,
+      "ppfd_umol": 13.4,
+      "dli_mol": 307
+    },
+    {
+      "key": "early veg|2|coco|60|sharkmousefarms",
+      "phase": "early veg",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "60",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 50,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 8.3,
+      "dli_mol": 460
+    },
+    {
+      "key": "late veg|2|coco|55|sharkmousefarms",
+      "phase": "late veg",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 45,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 9.1,
+      "dli_mol": 460
+    },
+    {
+      "key": "early bloom|2|coco|55|sharkmousefarms",
+      "phase": "early bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 30,
+      "tair_c": 4,
+      "rh_percent": 30,
+      "ppfd_umol": 11.4,
+      "dli_mol": 575
+    },
+    {
+      "key": "mid bloom|2|coco|50|sharkmousefarms",
+      "phase": "mid bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 30,
+      "tair_c": 3,
+      "rh_percent": 30,
+      "ppfd_umol": 13.3,
+      "dli_mol": 613
+    },
+    {
+      "key": "late bloom|2|coco|50|sharkmousefarms",
+      "phase": "late bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 25,
+      "tair_c": 4,
+      "rh_percent": 60,
+      "ppfd_umol": 12.5,
+      "dli_mol": 575
+    },
+    {
+      "key": "flush|2|coco|50|sharkmousefarms",
+      "phase": "flush",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 30,
+      "tair_c": 3,
+      "rh_percent": 30,
+      "ppfd_umol": 13.3,
+      "dli_mol": 613
+    },
+    {
+      "key": "early veg|1|rockwool|60|sharkmousefarms",
+      "phase": "early veg",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "60",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 50,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 12.5,
+      "dli_mol": 345
+    },
+    {
+      "key": "late veg|1|rockwool|55|sharkmousefarms",
+      "phase": "late veg",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "55",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 45,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 9.1,
+      "dli_mol": 230
+    },
+    {
+      "key": "early bloom|1|rockwool|55|sharkmousefarms",
+      "phase": "early bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "55",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 35,
+      "tair_c": 4,
+      "rh_percent": 60,
+      "ppfd_umol": 11.4,
+      "dli_mol": 288
+    },
+    {
+      "key": "mid bloom|1|rockwool|50|sharkmousefarms",
+      "phase": "mid bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "50",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 30,
+      "tair_c": 3,
+      "rh_percent": 60,
+      "ppfd_umol": 13.4,
+      "dli_mol": 307
+    },
+    {
+      "key": "late bloom|1|rockwool|50|sharkmousefarms",
+      "phase": "late bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "50",
+      "co2_ppm": 30,
+      "vpd_air_kpa": 20,
+      "tair_c": 4,
+      "rh_percent": 60,
+      "ppfd_umol": 15,
+      "dli_mol": 345
+    },
+    {
+      "key": "flush|1|rockwool|50|sharkmousefarms",
+      "phase": "flush",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "50",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 25,
+      "tair_c": 3,
+      "rh_percent": 60,
+      "ppfd_umol": 20,
+      "dli_mol": 460
+    },
+    {
+      "key": "early veg|2|soil|65|sharkmousefarms",
+      "phase": "early veg",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "65",
+      "co2_ppm": 15,
+      "vpd_air_kpa": 50,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "late veg|2|soil|65|sharkmousefarms",
+      "phase": "late veg",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "65",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 45,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "early bloom|2|soil|65|sharkmousefarms",
+      "phase": "early bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "65",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 45,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "mid bloom|2|soil|55|sharkmousefarms",
+      "phase": "mid bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "55",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 35,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "late bloom|2|soil|55|sharkmousefarms",
+      "phase": "late bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "55",
+      "co2_ppm": 30,
+      "vpd_air_kpa": 25,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "flush|2|soil|50|sharkmousefarms",
+      "phase": "flush",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "50",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 25,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "athena pro|0|||",
+      "phase": "Athena Pro",
+      "photoperiod_h": null,
+      "lightcycle": null,
+      "co2_mode": null,
+      "co2_ppm": null,
+      "vpd_air_kpa": null,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "phase|photoperiod_h|lightcycle|co2_mode|",
+      "phase": "phase",
+      "photoperiod_h": null,
+      "lightcycle": "Lightcycle",
+      "co2_mode": "co2_mode",
+      "co2_ppm": null,
+      "vpd_air_kpa": null,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "early veg|18|day|co2|athena pro",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 751,
+      "vpd_air_kpa": 1.24,
+      "tair_c": 26.66666667,
+      "rh_percent": 63,
+      "ppfd_umol": 401,
+      "dli_mol": 25.9
+    },
+    {
+      "key": "early veg|18|night|co2|athena pro",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 601,
+      "vpd_air_kpa": 1.28,
+      "tair_c": 24.44444444,
+      "rh_percent": 59,
+      "ppfd_umol": 0,
+      "dli_mol": 25.9
+    },
+    {
+      "key": "late veg|18|day|co2|athena pro",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 901,
+      "vpd_air_kpa": 1.46,
+      "tair_c": 26.66666667,
+      "rh_percent": 58,
+      "ppfd_umol": 801,
+      "dli_mol": 51.9
+    },
+    {
+      "key": "late veg|18|night|co2|athena pro",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 601,
+      "vpd_air_kpa": 1.36,
+      "tair_c": 24.44444444,
+      "rh_percent": 55,
+      "ppfd_umol": 0,
+      "dli_mol": 51.9
+    },
+    {
+      "key": "early bloom|12|day|co2|athena pro",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 1201,
+      "vpd_air_kpa": 1.54,
+      "tair_c": 26.11111111,
+      "rh_percent": 54,
+      "ppfd_umol": 1101,
+      "dli_mol": 47.5
+    },
+    {
+      "key": "early bloom|12|night|co2|athena pro",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 601,
+      "vpd_air_kpa": 1.41,
+      "tair_c": 22.77777778,
+      "rh_percent": 51,
+      "ppfd_umol": 0,
+      "dli_mol": 47.5
+    },
+    {
+      "key": "mid bloom|12|day|co2|athena pro",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 1201,
+      "vpd_air_kpa": 1.41,
+      "tair_c": 26.11111111,
+      "rh_percent": 58,
+      "ppfd_umol": 1201,
+      "dli_mol": 51.8
+    },
+    {
+      "key": "mid bloom|12|night|co2|athena pro",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 601,
+      "vpd_air_kpa": 1.34,
+      "tair_c": 21.66666667,
+      "rh_percent": 48,
+      "ppfd_umol": 0,
+      "dli_mol": 51.8
+    },
+    {
+      "key": "late bloom|12|day|co2|athena pro",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 1201,
+      "vpd_air_kpa": 1.73,
+      "tair_c": 25.55555556,
+      "rh_percent": 48,
+      "ppfd_umol": 1201,
+      "dli_mol": 51.8
+    },
+    {
+      "key": "late bloom|12|night|co2|athena pro",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 601,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 21.11111111,
+      "rh_percent": 39,
+      "ppfd_umol": 0,
+      "dli_mol": 51.8
+    },
+    {
+      "key": "flush|12|day|co2|athena pro",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 951,
+      "vpd_air_kpa": 1.68,
+      "tair_c": 23.88888889,
+      "rh_percent": 45,
+      "ppfd_umol": 901,
+      "dli_mol": 41
+    },
+    {
+      "key": "flush|12|night|co2|athena pro",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 601,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 21.11111111,
+      "rh_percent": 39,
+      "ppfd_umol": 0,
+      "dli_mol": 41
+    },
+    {
+      "key": "early veg|18|day|no_co2|athena pro",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 451,
+      "vpd_air_kpa": 1.21,
+      "tair_c": 26.66666667,
+      "rh_percent": 66,
+      "ppfd_umol": 401,
+      "dli_mol": 25.9
+    },
+    {
+      "key": "early veg|18|night|no_co2|athena pro",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 451,
+      "vpd_air_kpa": 1.28,
+      "tair_c": 24.44444444,
+      "rh_percent": 60,
+      "ppfd_umol": 0,
+      "dli_mol": 25.9
+    },
+    {
+      "key": "late veg|18|day|no_co2|athena pro",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 451,
+      "vpd_air_kpa": 1.39,
+      "tair_c": 26.66666667,
+      "rh_percent": 61,
+      "ppfd_umol": 801,
+      "dli_mol": 51.9
+    },
+    {
+      "key": "late veg|18|night|no_co2|athena pro",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 451,
+      "vpd_air_kpa": 1.36,
+      "tair_c": 24.44444444,
+      "rh_percent": 56,
+      "ppfd_umol": 0,
+      "dli_mol": 51.9
+    },
+    {
+      "key": "early bloom|12|day|no_co2|athena pro",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 451,
+      "vpd_air_kpa": 1.44,
+      "tair_c": 26.11111111,
+      "rh_percent": 58,
+      "ppfd_umol": 951,
+      "dli_mol": 47.5
+    },
+    {
+      "key": "early bloom|12|night|no_co2|athena pro",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 451,
+      "vpd_air_kpa": 1.41,
+      "tair_c": 22.77777778,
+      "rh_percent": 50,
+      "ppfd_umol": 0,
+      "dli_mol": 47.5
+    },
+    {
+      "key": "mid bloom|12|day|no_co2|athena pro",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 451,
+      "vpd_air_kpa": 1.61,
+      "tair_c": 26.11111111,
+      "rh_percent": 53,
+      "ppfd_umol": 951,
+      "dli_mol": 47.5
+    },
+    {
+      "key": "mid bloom|12|night|no_co2|athena pro",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 451,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 21.66666667,
+      "rh_percent": 44,
+      "ppfd_umol": 0,
+      "dli_mol": 47.5
+    },
+    {
+      "key": "late bloom|12|day|no_co2|athena pro",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 451,
+      "vpd_air_kpa": 1.66,
+      "tair_c": 25.55555556,
+      "rh_percent": 50,
+      "ppfd_umol": 951,
+      "dli_mol": 38.8
+    },
+    {
+      "key": "late bloom|12|night|no_co2|athena pro",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 451,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 21.11111111,
+      "rh_percent": 38,
+      "ppfd_umol": 0,
+      "dli_mol": 38.8
+    },
+    {
+      "key": "flush|12|day|no_co2|athena pro",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 451,
+      "vpd_air_kpa": 1.65,
+      "tair_c": 23.88888889,
+      "rh_percent": 45,
+      "ppfd_umol": 751,
+      "dli_mol": 32.4
+    },
+    {
+      "key": "flush|12|night|no_co2|athena pro",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 451,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 21.11111111,
+      "rh_percent": 38,
+      "ppfd_umol": 0,
+      "dli_mol": 32.4
+    },
+    {
+      "key": "phase|container_gal|media|vwc_last|",
+      "phase": "phase",
+      "photoperiod_h": null,
+      "lightcycle": "media",
+      "co2_mode": "vwc_last",
+      "co2_ppm": null,
+      "vpd_air_kpa": null,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "early veg|1|coco|60|athena pro",
+      "phase": "early veg",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "60",
+      "co2_ppm": 11,
+      "vpd_air_kpa": 49,
+      "tair_c": 2,
+      "rh_percent": 16,
+      "ppfd_umol": 8.3,
+      "dli_mol": 230
+    },
+    {
+      "key": "late veg|1|coco|55|athena pro",
+      "phase": "late veg",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 11,
+      "vpd_air_kpa": 44,
+      "tair_c": 2,
+      "rh_percent": 16,
+      "ppfd_umol": 9.1,
+      "dli_mol": 230
+    },
+    {
+      "key": "early bloom|1|coco|55|athena pro",
+      "phase": "early bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 26,
+      "vpd_air_kpa": 29,
+      "tair_c": 4,
+      "rh_percent": 31,
+      "ppfd_umol": 11.4,
+      "dli_mol": 288
+    },
+    {
+      "key": "mid bloom|1|coco|50|athena pro",
+      "phase": "mid bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 26,
+      "vpd_air_kpa": 24,
+      "tair_c": 3,
+      "rh_percent": 31,
+      "ppfd_umol": 13.4,
+      "dli_mol": 307
+    },
+    {
+      "key": "late bloom|1|coco|50|athena pro",
+      "phase": "late bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 26,
+      "vpd_air_kpa": 24,
+      "tair_c": 4,
+      "rh_percent": 31,
+      "ppfd_umol": 12.5,
+      "dli_mol": 288
+    },
+    {
+      "key": "flush|1|coco|50|athena pro",
+      "phase": "flush",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 26,
+      "vpd_air_kpa": 24,
+      "tair_c": 3,
+      "rh_percent": 31,
+      "ppfd_umol": 13.4,
+      "dli_mol": 307
+    },
+    {
+      "key": "early veg|2|coco|60|athena pro",
+      "phase": "early veg",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "60",
+      "co2_ppm": 11,
+      "vpd_air_kpa": 49,
+      "tair_c": 2,
+      "rh_percent": 16,
+      "ppfd_umol": 8.3,
+      "dli_mol": 460
+    },
+    {
+      "key": "late veg|2|coco|55|athena pro",
+      "phase": "late veg",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 11,
+      "vpd_air_kpa": 44,
+      "tair_c": 2,
+      "rh_percent": 16,
+      "ppfd_umol": 9.1,
+      "dli_mol": 460
+    },
+    {
+      "key": "early bloom|2|coco|55|athena pro",
+      "phase": "early bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 26,
+      "vpd_air_kpa": 29,
+      "tair_c": 4,
+      "rh_percent": 31,
+      "ppfd_umol": 11.4,
+      "dli_mol": 575
+    },
+    {
+      "key": "mid bloom|2|coco|50|athena pro",
+      "phase": "mid bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 26,
+      "vpd_air_kpa": 24,
+      "tair_c": 3,
+      "rh_percent": 31,
+      "ppfd_umol": 13.3,
+      "dli_mol": 613
+    },
+    {
+      "key": "late bloom|2|coco|50|athena pro",
+      "phase": "late bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 26,
+      "vpd_air_kpa": 24,
+      "tair_c": 4,
+      "rh_percent": 61,
+      "ppfd_umol": 12.5,
+      "dli_mol": 575
+    },
+    {
+      "key": "flush|2|coco|50|athena pro",
+      "phase": "flush",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 21,
+      "vpd_air_kpa": 29,
+      "tair_c": 3,
+      "rh_percent": 61,
+      "ppfd_umol": 13.3,
+      "dli_mol": 613
+    },
+    {
+      "key": "early veg|1|rockwool|60|athena pro",
+      "phase": "early veg",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "60",
+      "co2_ppm": 11,
+      "vpd_air_kpa": 49,
+      "tair_c": 2,
+      "rh_percent": 16,
+      "ppfd_umol": 12.5,
+      "dli_mol": 345
+    },
+    {
+      "key": "late veg|1|rockwool|55|athena pro",
+      "phase": "late veg",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "55",
+      "co2_ppm": 11,
+      "vpd_air_kpa": 44,
+      "tair_c": 2,
+      "rh_percent": 16,
+      "ppfd_umol": 9.1,
+      "dli_mol": 230
+    },
+    {
+      "key": "early bloom|1|rockwool|55|athena pro",
+      "phase": "early bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "55",
+      "co2_ppm": 21,
+      "vpd_air_kpa": 34,
+      "tair_c": 4,
+      "rh_percent": 61,
+      "ppfd_umol": 11.4,
+      "dli_mol": 288
+    },
+    {
+      "key": "mid bloom|1|rockwool|50|athena pro",
+      "phase": "mid bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "50",
+      "co2_ppm": 21,
+      "vpd_air_kpa": 29,
+      "tair_c": 3,
+      "rh_percent": 61,
+      "ppfd_umol": 13.4,
+      "dli_mol": 307
+    },
+    {
+      "key": "late bloom|1|rockwool|50|athena pro",
+      "phase": "late bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "50",
+      "co2_ppm": 31,
+      "vpd_air_kpa": 19,
+      "tair_c": 4,
+      "rh_percent": 61,
+      "ppfd_umol": 15,
+      "dli_mol": 345
+    },
+    {
+      "key": "flush|1|rockwool|50|athena pro",
+      "phase": "flush",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "50",
+      "co2_ppm": 26,
+      "vpd_air_kpa": 24,
+      "tair_c": 3,
+      "rh_percent": 61,
+      "ppfd_umol": 20,
+      "dli_mol": 460
+    },
+    {
+      "key": "early veg|2|soil|65|athena pro",
+      "phase": "early veg",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "65",
+      "co2_ppm": 16,
+      "vpd_air_kpa": 49,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "late veg|2|soil|65|athena pro",
+      "phase": "late veg",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "65",
+      "co2_ppm": 16,
+      "vpd_air_kpa": 49,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "early bloom|2|soil|65|athena pro",
+      "phase": "early bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "65",
+      "co2_ppm": 21,
+      "vpd_air_kpa": 44,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "mid bloom|2|soil|55|athena pro",
+      "phase": "mid bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "55",
+      "co2_ppm": 21,
+      "vpd_air_kpa": 29,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "late bloom|2|soil|55|athena pro",
+      "phase": "late bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "55",
+      "co2_ppm": 31,
+      "vpd_air_kpa": 24,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "flush|2|soil|50|athena pro",
+      "phase": "flush",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "50",
+      "co2_ppm": 26,
+      "vpd_air_kpa": 24,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "early veg|18|day|co2|my better than sharks sop",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 750,
+      "vpd_air_kpa": 1.15,
+      "tair_c": 26.666667,
+      "rh_percent": 67,
+      "ppfd_umol": 404,
+      "dli_mol": 26.2
+    },
+    {
+      "key": "early veg|18|night|co2|my better than sharks sop",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.16,
+      "tair_c": 24.444444,
+      "rh_percent": 62,
+      "ppfd_umol": 0,
+      "dli_mol": 26.2
+    },
+    {
+      "key": "late veg|18|day|co2|my better than sharks sop",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 900,
+      "vpd_air_kpa": 1.33,
+      "tair_c": 26.666667,
+      "rh_percent": 62,
+      "ppfd_umol": 808,
+      "dli_mol": 52.4
+    },
+    {
+      "key": "late veg|18|night|co2|my better than sharks sop",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.29,
+      "tair_c": 24.444444,
+      "rh_percent": 58,
+      "ppfd_umol": 0,
+      "dli_mol": 52.4
+    },
+    {
+      "key": "early bloom|12|day|co2|my better than sharks sop",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 1200,
+      "vpd_air_kpa": 1.42,
+      "tair_c": 26.111111,
+      "rh_percent": 58,
+      "ppfd_umol": 1111,
+      "dli_mol": 48
+    },
+    {
+      "key": "early bloom|12|night|co2|my better than sharks sop",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.33,
+      "tair_c": 22.777778,
+      "rh_percent": 52,
+      "ppfd_umol": 0,
+      "dli_mol": 48
+    },
+    {
+      "key": "mid bloom|12|day|co2|my better than sharks sop",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 1200,
+      "vpd_air_kpa": 1.29,
+      "tair_c": 26.111111,
+      "rh_percent": 62,
+      "ppfd_umol": 1212,
+      "dli_mol": 52.4
+    },
+    {
+      "key": "mid bloom|12|night|co2|my better than sharks sop",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.27,
+      "tair_c": 21.666667,
+      "rh_percent": 51,
+      "ppfd_umol": 0,
+      "dli_mol": 52.4
+    },
+    {
+      "key": "late bloom|12|day|co2|my better than sharks sop",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 1200,
+      "vpd_air_kpa": 1.6,
+      "tair_c": 25.555556,
+      "rh_percent": 51,
+      "ppfd_umol": 1212,
+      "dli_mol": 52.4
+    },
+    {
+      "key": "late bloom|12|night|co2|my better than sharks sop",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.5,
+      "tair_c": 21.111111,
+      "rh_percent": 40,
+      "ppfd_umol": 0,
+      "dli_mol": 52.4
+    },
+    {
+      "key": "flush|12|day|co2|my better than sharks sop",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 950,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 23.888889,
+      "rh_percent": 47,
+      "ppfd_umol": 909,
+      "dli_mol": 39.3
+    },
+    {
+      "key": "flush|12|night|co2|my better than sharks sop",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.5,
+      "tair_c": 21.111111,
+      "rh_percent": 40,
+      "ppfd_umol": 0,
+      "dli_mol": 39.3
+    },
+    {
+      "key": "early veg|18|day|no_co2|my better than sharks sop",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.08,
+      "tair_c": 26.666667,
+      "rh_percent": 69,
+      "ppfd_umol": 404,
+      "dli_mol": 26.2
+    },
+    {
+      "key": "early veg|18|night|no_co2|my better than sharks sop",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.16,
+      "tair_c": 24.444444,
+      "rh_percent": 62,
+      "ppfd_umol": 0,
+      "dli_mol": 26.2
+    },
+    {
+      "key": "late veg|18|day|no_co2|my better than sharks sop",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.26,
+      "tair_c": 26.666667,
+      "rh_percent": 64,
+      "ppfd_umol": 808,
+      "dli_mol": 52.4
+    },
+    {
+      "key": "late veg|18|night|no_co2|my better than sharks sop",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.29,
+      "tair_c": 24.444444,
+      "rh_percent": 58,
+      "ppfd_umol": 0,
+      "dli_mol": 52.4
+    },
+    {
+      "key": "early bloom|12|day|no_co2|my better than sharks sop",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.32,
+      "tair_c": 26.111111,
+      "rh_percent": 61,
+      "ppfd_umol": 960,
+      "dli_mol": 41.5
+    },
+    {
+      "key": "early bloom|12|night|no_co2|my better than sharks sop",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.33,
+      "tair_c": 22.777778,
+      "rh_percent": 52,
+      "ppfd_umol": 0,
+      "dli_mol": 41.5
+    },
+    {
+      "key": "mid bloom|12|day|no_co2|my better than sharks sop",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.49,
+      "tair_c": 26.111111,
+      "rh_percent": 56,
+      "ppfd_umol": 960,
+      "dli_mol": 41.5
+    },
+    {
+      "key": "mid bloom|12|night|no_co2|my better than sharks sop",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.4,
+      "tair_c": 21.666667,
+      "rh_percent": 46,
+      "ppfd_umol": 0,
+      "dli_mol": 41.5
+    },
+    {
+      "key": "late bloom|12|day|no_co2|my better than sharks sop",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.54,
+      "tair_c": 25.555556,
+      "rh_percent": 53,
+      "ppfd_umol": 909,
+      "dli_mol": 39.3
+    },
+    {
+      "key": "late bloom|12|night|no_co2|my better than sharks sop",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.5,
+      "tair_c": 21.111111,
+      "rh_percent": 40,
+      "ppfd_umol": 0,
+      "dli_mol": 39.3
+    },
+    {
+      "key": "flush|12|day|no_co2|my better than sharks sop",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.54,
+      "tair_c": 23.888889,
+      "rh_percent": 48,
+      "ppfd_umol": 758,
+      "dli_mol": 32.7
+    },
+    {
+      "key": "flush|12|night|no_co2|my better than sharks sop",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.5,
+      "tair_c": 21.111111,
+      "rh_percent": 40,
+      "ppfd_umol": 0,
+      "dli_mol": 32.7
+    },
+    {
+      "key": "early veg|1|coco|60|my better than sharks sop",
+      "phase": "early veg",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "60",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 50,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 8.3,
+      "dli_mol": 230
+    },
+    {
+      "key": "late veg|1|coco|55|my better than sharks sop",
+      "phase": "late veg",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 45,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 9.1,
+      "dli_mol": 230
+    },
+    {
+      "key": "early bloom|1|coco|55|my better than sharks sop",
+      "phase": "early bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 30,
+      "tair_c": 4,
+      "rh_percent": 30,
+      "ppfd_umol": 11.4,
+      "dli_mol": 288
+    },
+    {
+      "key": "mid bloom|1|coco|50|my better than sharks sop",
+      "phase": "mid bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 30,
+      "vpd_air_kpa": 20,
+      "tair_c": 3,
+      "rh_percent": 30,
+      "ppfd_umol": 13.4,
+      "dli_mol": 307
+    },
+    {
+      "key": "late bloom|1|coco|50|my better than sharks sop",
+      "phase": "late bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 25,
+      "tair_c": 4,
+      "rh_percent": 60,
+      "ppfd_umol": 12.5,
+      "dli_mol": 288
+    },
+    {
+      "key": "flush|1|coco|50|my better than sharks sop",
+      "phase": "flush",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 30,
+      "vpd_air_kpa": 20,
+      "tair_c": 3,
+      "rh_percent": 30,
+      "ppfd_umol": 13.4,
+      "dli_mol": 307
+    },
+    {
+      "key": "early veg|2|coco|60|my better than sharks sop",
+      "phase": "early veg",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "60",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 50,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 8.3,
+      "dli_mol": 460
+    },
+    {
+      "key": "late veg|2|coco|55|my better than sharks sop",
+      "phase": "late veg",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 45,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 9.1,
+      "dli_mol": 460
+    },
+    {
+      "key": "early bloom|2|coco|55|my better than sharks sop",
+      "phase": "early bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 30,
+      "tair_c": 4,
+      "rh_percent": 30,
+      "ppfd_umol": 11.4,
+      "dli_mol": 575
+    },
+    {
+      "key": "mid bloom|2|coco|50|my better than sharks sop",
+      "phase": "mid bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 30,
+      "tair_c": 3,
+      "rh_percent": 30,
+      "ppfd_umol": 13.3,
+      "dli_mol": 613
+    },
+    {
+      "key": "late bloom|2|coco|50|my better than sharks sop",
+      "phase": "late bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 25,
+      "tair_c": 4,
+      "rh_percent": 60,
+      "ppfd_umol": 12.5,
+      "dli_mol": 575
+    },
+    {
+      "key": "flush|2|coco|50|my better than sharks sop",
+      "phase": "flush",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 30,
+      "tair_c": 3,
+      "rh_percent": 30,
+      "ppfd_umol": 13.3,
+      "dli_mol": 613
+    },
+    {
+      "key": "early veg|1|rockwool|60|my better than sharks sop",
+      "phase": "early veg",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "60",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 50,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 12.5,
+      "dli_mol": 345
+    },
+    {
+      "key": "late veg|1|rockwool|55|my better than sharks sop",
+      "phase": "late veg",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "55",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 45,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 9.1,
+      "dli_mol": 230
+    },
+    {
+      "key": "early bloom|1|rockwool|55|my better than sharks sop",
+      "phase": "early bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "55",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 35,
+      "tair_c": 4,
+      "rh_percent": 60,
+      "ppfd_umol": 11.4,
+      "dli_mol": 288
+    },
+    {
+      "key": "mid bloom|1|rockwool|50|my better than sharks sop",
+      "phase": "mid bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "50",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 30,
+      "tair_c": 3,
+      "rh_percent": 60,
+      "ppfd_umol": 13.4,
+      "dli_mol": 307
+    },
+    {
+      "key": "late bloom|1|rockwool|50|my better than sharks sop",
+      "phase": "late bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "50",
+      "co2_ppm": 30,
+      "vpd_air_kpa": 20,
+      "tair_c": 4,
+      "rh_percent": 60,
+      "ppfd_umol": 15,
+      "dli_mol": 345
+    },
+    {
+      "key": "flush|1|rockwool|50|my better than sharks sop",
+      "phase": "flush",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "50",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 25,
+      "tair_c": 3,
+      "rh_percent": 60,
+      "ppfd_umol": 20,
+      "dli_mol": 460
+    },
+    {
+      "key": "early veg|2|soil|65|my better than sharks sop",
+      "phase": "early veg",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "65",
+      "co2_ppm": 15,
+      "vpd_air_kpa": 50,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "late veg|2|soil|65|my better than sharks sop",
+      "phase": "late veg",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "65",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 45,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "early bloom|2|soil|65|my better than sharks sop",
+      "phase": "early bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "65",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 45,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "mid bloom|2|soil|55|my better than sharks sop",
+      "phase": "mid bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "55",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 35,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "late bloom|2|soil|55|my better than sharks sop",
+      "phase": "late bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "55",
+      "co2_ppm": 30,
+      "vpd_air_kpa": 25,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "flush|2|soil|50|my better than sharks sop",
+      "phase": "flush",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "50",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 25,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "early veg|18|day|co2|mike hydro",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 700,
+      "vpd_air_kpa": 1.3,
+      "tair_c": 26.266667,
+      "rh_percent": 62,
+      "ppfd_umol": 392,
+      "dli_mol": 25.4
+    },
+    {
+      "key": "early veg|18|night|co2|mike hydro",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.26,
+      "tair_c": 24.144444,
+      "rh_percent": 58,
+      "ppfd_umol": 0,
+      "dli_mol": 25.4
+    },
+    {
+      "key": "late veg|18|day|co2|mike hydro",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 850,
+      "vpd_air_kpa": 1.47,
+      "tair_c": 26.266667,
+      "rh_percent": 57,
+      "ppfd_umol": 784,
+      "dli_mol": 50.8
+    },
+    {
+      "key": "late veg|18|night|co2|mike hydro",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.38,
+      "tair_c": 24.144444,
+      "rh_percent": 54,
+      "ppfd_umol": 0,
+      "dli_mol": 50.8
+    },
+    {
+      "key": "early bloom|12|day|co2|mike hydro",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 1150,
+      "vpd_air_kpa": 1.55,
+      "tair_c": 25.711111,
+      "rh_percent": 53,
+      "ppfd_umol": 1078,
+      "dli_mol": 46.6
+    },
+    {
+      "key": "early bloom|12|night|co2|mike hydro",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.42,
+      "tair_c": 22.477778,
+      "rh_percent": 48,
+      "ppfd_umol": 0,
+      "dli_mol": 46.6
+    },
+    {
+      "key": "mid bloom|12|day|co2|mike hydro",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 1150,
+      "vpd_air_kpa": 1.42,
+      "tair_c": 25.711111,
+      "rh_percent": 57,
+      "ppfd_umol": 1176,
+      "dli_mol": 50.8
+    },
+    {
+      "key": "mid bloom|12|night|co2|mike hydro",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.35,
+      "tair_c": 21.366667,
+      "rh_percent": 47,
+      "ppfd_umol": 0,
+      "dli_mol": 50.8
+    },
+    {
+      "key": "late bloom|12|day|co2|mike hydro",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 1150,
+      "vpd_air_kpa": 1.73,
+      "tair_c": 25.155556,
+      "rh_percent": 46,
+      "ppfd_umol": 1176,
+      "dli_mol": 50.8
+    },
+    {
+      "key": "late bloom|12|night|co2|mike hydro",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 20.811111,
+      "rh_percent": 36,
+      "ppfd_umol": 0,
+      "dli_mol": 50.8
+    },
+    {
+      "key": "flush|12|day|co2|mike hydro",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "co2",
+      "co2_ppm": 900,
+      "vpd_air_kpa": 1.68,
+      "tair_c": 23.488889,
+      "rh_percent": 42,
+      "ppfd_umol": 882,
+      "dli_mol": 38.1
+    },
+    {
+      "key": "flush|12|night|co2|mike hydro",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "co2",
+      "co2_ppm": 600,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 20.811111,
+      "rh_percent": 36,
+      "ppfd_umol": 0,
+      "dli_mol": 38.1
+    },
+    {
+      "key": "early veg|18|day|no_co2|mike hydro",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 400,
+      "vpd_air_kpa": 1.23,
+      "tair_c": 26.266667,
+      "rh_percent": 64,
+      "ppfd_umol": 392,
+      "dli_mol": 25.4
+    },
+    {
+      "key": "early veg|18|night|no_co2|mike hydro",
+      "phase": "early veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.26,
+      "tair_c": 24.144444,
+      "rh_percent": 58,
+      "ppfd_umol": 0,
+      "dli_mol": 25.4
+    },
+    {
+      "key": "late veg|18|day|no_co2|mike hydro",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 400,
+      "vpd_air_kpa": 1.4,
+      "tair_c": 26.266667,
+      "rh_percent": 59,
+      "ppfd_umol": 784,
+      "dli_mol": 50.8
+    },
+    {
+      "key": "late veg|18|night|no_co2|mike hydro",
+      "phase": "late veg",
+      "photoperiod_h": 18,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.38,
+      "tair_c": 24.144444,
+      "rh_percent": 54,
+      "ppfd_umol": 0,
+      "dli_mol": 50.8
+    },
+    {
+      "key": "early bloom|12|day|no_co2|mike hydro",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 400,
+      "vpd_air_kpa": 1.45,
+      "tair_c": 25.711111,
+      "rh_percent": 56,
+      "ppfd_umol": 931,
+      "dli_mol": 40.2
+    },
+    {
+      "key": "early bloom|12|night|no_co2|mike hydro",
+      "phase": "early bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.42,
+      "tair_c": 22.477778,
+      "rh_percent": 48,
+      "ppfd_umol": 0,
+      "dli_mol": 40.2
+    },
+    {
+      "key": "mid bloom|12|day|no_co2|mike hydro",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 400,
+      "vpd_air_kpa": 1.62,
+      "tair_c": 25.711111,
+      "rh_percent": 51,
+      "ppfd_umol": 931,
+      "dli_mol": 40.2
+    },
+    {
+      "key": "mid bloom|12|night|no_co2|mike hydro",
+      "phase": "mid bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.48,
+      "tair_c": 21.366667,
+      "rh_percent": 42,
+      "ppfd_umol": 0,
+      "dli_mol": 40.2
+    },
+    {
+      "key": "late bloom|12|day|no_co2|mike hydro",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 400,
+      "vpd_air_kpa": 1.66,
+      "tair_c": 25.155556,
+      "rh_percent": 48,
+      "ppfd_umol": 882,
+      "dli_mol": 38.1
+    },
+    {
+      "key": "late bloom|12|night|no_co2|mike hydro",
+      "phase": "late bloom",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 20.811111,
+      "rh_percent": 36,
+      "ppfd_umol": 0,
+      "dli_mol": 38.1
+    },
+    {
+      "key": "flush|12|day|no_co2|mike hydro",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Day",
+      "co2_mode": "no_co2",
+      "co2_ppm": 400,
+      "vpd_air_kpa": 1.65,
+      "tair_c": 23.488889,
+      "rh_percent": 43,
+      "ppfd_umol": 735,
+      "dli_mol": 31.8
+    },
+    {
+      "key": "flush|12|night|no_co2|mike hydro",
+      "phase": "flush",
+      "photoperiod_h": 12,
+      "lightcycle": "Night",
+      "co2_mode": "no_co2",
+      "co2_ppm": 450,
+      "vpd_air_kpa": 1.57,
+      "tair_c": 20.811111,
+      "rh_percent": 36,
+      "ppfd_umol": 0,
+      "dli_mol": 31.8
+    },
+    {
+      "key": "early veg|1|coco|60|mike hydro",
+      "phase": "early veg",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "60",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 50,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 8.3,
+      "dli_mol": 230
+    },
+    {
+      "key": "late veg|1|coco|55|mike hydro",
+      "phase": "late veg",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 45,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 9.1,
+      "dli_mol": 230
+    },
+    {
+      "key": "early bloom|1|coco|55|mike hydro",
+      "phase": "early bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 30,
+      "tair_c": 4,
+      "rh_percent": 30,
+      "ppfd_umol": 11.4,
+      "dli_mol": 288
+    },
+    {
+      "key": "mid bloom|1|coco|50|mike hydro",
+      "phase": "mid bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 30,
+      "vpd_air_kpa": 20,
+      "tair_c": 3,
+      "rh_percent": 30,
+      "ppfd_umol": 13.4,
+      "dli_mol": 307
+    },
+    {
+      "key": "late bloom|1|coco|50|mike hydro",
+      "phase": "late bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 25,
+      "tair_c": 4,
+      "rh_percent": 60,
+      "ppfd_umol": 12.5,
+      "dli_mol": 288
+    },
+    {
+      "key": "flush|1|coco|50|mike hydro",
+      "phase": "flush",
+      "photoperiod_h": 1,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 30,
+      "vpd_air_kpa": 20,
+      "tair_c": 3,
+      "rh_percent": 30,
+      "ppfd_umol": 13.4,
+      "dli_mol": 307
+    },
+    {
+      "key": "early veg|2|coco|60|mike hydro",
+      "phase": "early veg",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "60",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 50,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 8.3,
+      "dli_mol": 460
+    },
+    {
+      "key": "late veg|2|coco|55|mike hydro",
+      "phase": "late veg",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 45,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 9.1,
+      "dli_mol": 460
+    },
+    {
+      "key": "early bloom|2|coco|55|mike hydro",
+      "phase": "early bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "55",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 30,
+      "tair_c": 4,
+      "rh_percent": 30,
+      "ppfd_umol": 11.4,
+      "dli_mol": 575
+    },
+    {
+      "key": "mid bloom|2|coco|50|mike hydro",
+      "phase": "mid bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 30,
+      "tair_c": 3,
+      "rh_percent": 30,
+      "ppfd_umol": 13.3,
+      "dli_mol": 613
+    },
+    {
+      "key": "late bloom|2|coco|50|mike hydro",
+      "phase": "late bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 25,
+      "tair_c": 4,
+      "rh_percent": 60,
+      "ppfd_umol": 12.5,
+      "dli_mol": 575
+    },
+    {
+      "key": "flush|2|coco|50|mike hydro",
+      "phase": "flush",
+      "photoperiod_h": 2,
+      "lightcycle": "coco",
+      "co2_mode": "50",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 30,
+      "tair_c": 3,
+      "rh_percent": 30,
+      "ppfd_umol": 13.3,
+      "dli_mol": 613
+    },
+    {
+      "key": "early veg|1|rockwool|60|mike hydro",
+      "phase": "early veg",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "60",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 50,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 12.5,
+      "dli_mol": 345
+    },
+    {
+      "key": "late veg|1|rockwool|55|mike hydro",
+      "phase": "late veg",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "55",
+      "co2_ppm": 10,
+      "vpd_air_kpa": 45,
+      "tair_c": 2,
+      "rh_percent": 15,
+      "ppfd_umol": 9.1,
+      "dli_mol": 230
+    },
+    {
+      "key": "early bloom|1|rockwool|55|mike hydro",
+      "phase": "early bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "55",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 35,
+      "tair_c": 4,
+      "rh_percent": 60,
+      "ppfd_umol": 11.4,
+      "dli_mol": 288
+    },
+    {
+      "key": "mid bloom|1|rockwool|50|mike hydro",
+      "phase": "mid bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "50",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 30,
+      "tair_c": 3,
+      "rh_percent": 60,
+      "ppfd_umol": 13.4,
+      "dli_mol": 307
+    },
+    {
+      "key": "late bloom|1|rockwool|50|mike hydro",
+      "phase": "late bloom",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "50",
+      "co2_ppm": 30,
+      "vpd_air_kpa": 20,
+      "tair_c": 4,
+      "rh_percent": 60,
+      "ppfd_umol": 15,
+      "dli_mol": 345
+    },
+    {
+      "key": "flush|1|rockwool|50|mike hydro",
+      "phase": "flush",
+      "photoperiod_h": 1,
+      "lightcycle": "rockwool",
+      "co2_mode": "50",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 25,
+      "tair_c": 3,
+      "rh_percent": 60,
+      "ppfd_umol": 20,
+      "dli_mol": 460
+    },
+    {
+      "key": "early veg|2|soil|65|mike hydro",
+      "phase": "early veg",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "65",
+      "co2_ppm": 15,
+      "vpd_air_kpa": 50,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "late veg|2|soil|65|mike hydro",
+      "phase": "late veg",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "65",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 45,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "early bloom|2|soil|65|mike hydro",
+      "phase": "early bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "65",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 45,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "mid bloom|2|soil|55|mike hydro",
+      "phase": "mid bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "55",
+      "co2_ppm": 20,
+      "vpd_air_kpa": 35,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "late bloom|2|soil|55|mike hydro",
+      "phase": "late bloom",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "55",
+      "co2_ppm": 30,
+      "vpd_air_kpa": 25,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    },
+    {
+      "key": "flush|2|soil|50|mike hydro",
+      "phase": "flush",
+      "photoperiod_h": 2,
+      "lightcycle": "soil",
+      "co2_mode": "50",
+      "co2_ppm": 25,
+      "vpd_air_kpa": 25,
+      "tair_c": null,
+      "rh_percent": null,
+      "ppfd_umol": null,
+      "dli_mol": null
+    }
+  ],
+  "nutrientSchedule": [
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 1,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1000,
+      "ppm_700": 1400,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 1,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1000,
+      "ppm_700": 1400,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up_advanced_systems"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 1,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": 32,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1000,
+      "ppm_700": 1400,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 1,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1000,
+      "ppm_700": 1400,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Bloom_not_used_in_veg"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 1,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": 19,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1000,
+      "ppm_700": 1400,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 1,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1000,
+      "ppm_700": 1400,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Fade_not_used_this_week"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 1,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 2,
+      "cleanse_max_ml_per_gal": 5,
+      "ec_target": 3,
+      "ppm_500": 1000,
+      "ppm_700": 1400,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Cleanse_range_2_to_5"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 2,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 2,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up_advanced_systems"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 2,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": 32,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 2,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Bloom_not_used_in_veg"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 2,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": 19,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 2,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Fade_not_used_this_week"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 2,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 2,
+      "cleanse_max_ml_per_gal": 5,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Cleanse_range_2_to_5"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 3,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 3,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up_advanced_systems"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 3,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": 32,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 3,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Bloom_not_used_in_veg"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 3,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": 19,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 3,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Fade_not_used_this_week"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 3,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 2,
+      "cleanse_max_ml_per_gal": 5,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Cleanse_range_2_to_5"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 4,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 4,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up_advanced_systems"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 4,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": 32,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 4,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Bloom_not_used_in_veg"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 4,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": 19,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 4,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Fade_not_used_this_week"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "veg",
+      "week_index": 4,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 2,
+      "cleanse_max_ml_per_gal": 5,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Cleanse_range_2_to_5"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 1,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 1,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up_advanced_systems"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 1,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Grow_not_used_in_flower"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 1,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": 32,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 1,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": 19,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 1,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Fade_not_used_this_week"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 1,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 2,
+      "cleanse_max_ml_per_gal": 5,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Cleanse_range_2_to_5"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 2,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 2,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up_advanced_systems"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 2,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Grow_not_used_in_flower"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 2,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": 32,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 2,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": 19,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 2,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Fade_not_used_this_week"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 2,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 2,
+      "cleanse_max_ml_per_gal": 5,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Cleanse_range_2_to_5"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 3,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 3,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up_advanced_systems"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 3,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Grow_not_used_in_flower"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 3,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": 32,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 3,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": 19,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 3,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Fade_not_used_this_week"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 3,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 2,
+      "cleanse_max_ml_per_gal": 5,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Cleanse_range_2_to_5"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 4,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 4,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up_advanced_systems"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 4,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Grow_not_used_in_flower"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 4,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": 32,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 4,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": 19,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 4,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Fade_not_used_this_week"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 4,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 2,
+      "cleanse_max_ml_per_gal": 5,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Cleanse_range_2_to_5"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 5,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 5,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up_advanced_systems"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 5,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Grow_not_used_in_flower"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 5,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": 32,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 5,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": 19,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 5,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Fade_not_used_this_week"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 5,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 2,
+      "cleanse_max_ml_per_gal": 5,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Cleanse_range_2_to_5"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 6,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 6,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up_advanced_systems"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 6,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Grow_not_used_in_flower"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 6,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": 32,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 6,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": 19,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 6,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Fade_not_used_this_week"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 6,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 2,
+      "cleanse_max_ml_per_gal": 5,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Cleanse_range_2_to_5"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 7,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 7,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up_advanced_systems"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 7,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Grow_not_used_in_flower"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 7,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": 32,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 7,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": 19,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Core_can_be_swapped_with_Fade_W7_9_cultivar_dependent"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 7,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Fade_optional_W7_9_cultivar_dependent"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 7,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 2,
+      "cleanse_max_ml_per_gal": 5,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Cleanse_range_2_to_5"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 8,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 8,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up_advanced_systems"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 8,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Grow_not_used_in_flower"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 8,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": 32,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 8,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Core_marked_for_swap_with_Fade_W8_9"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 8,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": 19,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Fade_optional_W7_9_cultivar_dependent"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 8,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 2,
+      "cleanse_max_ml_per_gal": 5,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Cleanse_range_2_to_5"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 9,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 9,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Use_as_pH_up_advanced_systems"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 9,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Grow_not_used_in_flower"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 9,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": 32,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": null
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 9,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Core_marked_for_swap_with_Fade_W8_9"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 9,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": 19,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Fade_optional_W7_9_cultivar_dependent"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flower",
+      "week_index": 9,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 2,
+      "cleanse_max_ml_per_gal": 5,
+      "ec_target": 3,
+      "ppm_500": 1500,
+      "ppm_700": 2100,
+      "ph_min": 5.8,
+      "ph_max": 6.2,
+      "notes": "Cleanse_range_2_to_5"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flush",
+      "week_index": 1,
+      "bottle_id": "balance",
+      "bottle_label": "Athena Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 0.1,
+      "ppm_500": 50,
+      "ppm_700": 70,
+      "ph_min": 6,
+      "ph_max": 6.4,
+      "notes": "Flush_targets"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flush",
+      "week_index": 1,
+      "bottle_id": "pro_balance",
+      "bottle_label": "Athena Pro Balance",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 0.1,
+      "ppm_500": 50,
+      "ppm_700": 70,
+      "ph_min": 6,
+      "ph_max": 6.4,
+      "notes": "Flush_targets"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flush",
+      "week_index": 1,
+      "bottle_id": "grow",
+      "bottle_label": "Athena Pro Grow",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 0.1,
+      "ppm_500": 50,
+      "ppm_700": 70,
+      "ph_min": 6,
+      "ph_max": 6.4,
+      "notes": "Flush_targets"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flush",
+      "week_index": 1,
+      "bottle_id": "bloom",
+      "bottle_label": "Athena Pro Bloom",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 0.1,
+      "ppm_500": 50,
+      "ppm_700": 70,
+      "ph_min": 6,
+      "ph_max": 6.4,
+      "notes": "Flush_targets"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flush",
+      "week_index": 1,
+      "bottle_id": "core",
+      "bottle_label": "Athena Pro Core",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 0.1,
+      "ppm_500": 50,
+      "ppm_700": 70,
+      "ph_min": 6,
+      "ph_max": 6.4,
+      "notes": "Flush_targets"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flush",
+      "week_index": 1,
+      "bottle_id": "fade",
+      "bottle_label": "Athena Fade",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": null,
+      "cleanse_max_ml_per_gal": null,
+      "ec_target": 0.1,
+      "ppm_500": 50,
+      "ppm_700": 70,
+      "ph_min": 6,
+      "ph_max": 6.4,
+      "notes": "Flush_targets"
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "phase_block": "flush",
+      "week_index": 1,
+      "bottle_id": "cleanse",
+      "bottle_label": "Athena Cleanse",
+      "ml_per_gal": null,
+      "cleanse_min_ml_per_gal": 10,
+      "cleanse_max_ml_per_gal": 10,
+      "ec_target": 0.1,
+      "ppm_500": 50,
+      "ppm_700": 70,
+      "ph_min": 6,
+      "ph_max": 6.4,
+      "notes": "Flush_RO_plus_Cleanse_10ml"
+    }
+  ],
+  "nutrientStageMapping": [
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "stage_id": "early_veg",
+      "phase_block": "veg",
+      "week_index_start": 1,
+      "week_index_end": 2,
+      "default_week_index": 1,
+      "active": true
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "stage_id": "late_veg",
+      "phase_block": "veg",
+      "week_index_start": 2,
+      "week_index_end": 4,
+      "default_week_index": 3,
+      "active": true
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "stage_id": "early_bloom",
+      "phase_block": "flower",
+      "week_index_start": 1,
+      "week_index_end": 3,
+      "default_week_index": 2,
+      "active": true
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "stage_id": "mid_bloom",
+      "phase_block": "flower",
+      "week_index_start": 3,
+      "week_index_end": 6,
+      "default_week_index": 4,
+      "active": true
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "stage_id": "late_bloom",
+      "phase_block": "flower",
+      "week_index_start": 7,
+      "week_index_end": 9,
+      "default_week_index": 8,
+      "active": true
+    },
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "stage_id": "flush",
+      "phase_block": "flush",
+      "week_index_start": 1,
+      "week_index_end": 1,
+      "default_week_index": 1,
+      "active": true
+    }
+  ],
+  "nutrientLines": [
+    {
+      "line_id": "athena_pro_fade_imperial",
+      "sop_profile": "Athena Pro",
+      "label": "Athena Pro – Fade (Imperial)",
+      "brand": "Athena",
+      "enabled": true,
+      "is_default_for_profile": true
+    }
+  ],
+  "rowCount": 1000
+}

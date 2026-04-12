@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: plantpilot-sidecar
+    runtime: node
+    plan: starter
+    buildCommand: npm install && npx esbuild srv/index.ts --bundle --platform=node --target=node20 --outfile=dist/index.mjs --format=esm --external:express --external:cors --external:ws --external:edge-tts --external:google-tts-api
+    startCommand: node dist/index.mjs
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: PORT
+        value: 8789
+      - key: GAS_DIAG_URL
+        sync: false
+      - key: GAS_METHOD
+        value: POST
+      - key: LLM_API_KEY
+        sync: false
+      - key: LLM_MODEL
+        value: gpt-4o
+      - key: TTS_PROVIDER
+        value: edge
+      - key: CORS_ORIGIN
+        value: "*"

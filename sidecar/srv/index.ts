@@ -4,6 +4,18 @@ const _require = createRequire(import.meta.url);
 const express = _require("express") as typeof import("express");
 import type { Request, Response } from "express";
 
+let edgeTts: ((opts: { text: string; voice: string; rate: string; volume: string }) => AsyncIterable<{ type: string; data?: Uint8Array }>) | null = null;
+let googleTTSApi: any = null;
+
+try {
+  const mod = await import("edge-tts");
+  edgeTts = (mod as any).tts ?? (mod as any).default?.tts ?? null;
+} catch {}
+
+try {
+  googleTTSApi = (await import("google-tts-api")).default;
+} catch {}
+
 const VERSION = "v5.0.0-unified";
 
 const PORT = Number(process.env.PORT || 8789);
@@ -671,12 +683,11 @@ function solveIrrDraft(payload: Record<string, unknown>): IrrSolveResponse {
 /* ==================== TTS Providers ==================== */
 
 async function speakWithEdgeTts(text: string, res: Response) {
-  let mod: any = null;
-  try { mod = await import("edge-tts"); }
-  catch (e) { throw new Error(`edge-tts import failed: ${String((e as any)?.message || e)}`); }
-  const tts = (mod as any)?.tts ?? (mod as any)?.default?.tts;
-  if (typeof tts !== "function") throw new Error("edge-tts tts() not found");
-  const it = await tts({ text, voice: EDGE_VOICE, rate: EDGE_RATE, volume: EDGE_VOLUME });
+  if (!edgeTts) {
+    if (LLM_KEY) return await speakWithOpenAITts(text, res);
+    throw new Error("edge-tts unavailable (ships TypeScript, not bundled) and no LLM key for OpenAI TTS fallback");
+  }
+  const it = await edgeTts({ text, voice: EDGE_VOICE, rate: EDGE_RATE, volume: EDGE_VOLUME });
   const chunks: Buffer[] = [];
   for await (const part of it) if (part && part.type === "audio" && part.data) chunks.push(Buffer.from(part.data));
   const buf = Buffer.concat(chunks);
@@ -746,13 +757,13 @@ async function speakWithOpenAITts(text: string, res: Response) {
 }
 
 async function speakWithGoogleTts(text: string, res: Response) {
-  const googleTTS = (await import("google-tts-api")).default;
+  if (!googleTTSApi) throw new Error("google-tts-api not available");
   const MAX = 180;
   const chunks: string[] = [];
   for (let i = 0; i < text.length; i += MAX) chunks.push(text.slice(i, i + MAX));
   const bufs: Buffer[] = [];
   for (const c of chunks) {
-    const arr = await (googleTTS as any).getAllAudioBase64(c, { lang: "en", slow: false });
+    const arr = await (googleTTSApi as any).getAllAudioBase64(c, { lang: "en", slow: false });
     for (const p of (arr || [])) if (p?.base64) bufs.push(Buffer.from(String(p.base64), "base64"));
   }
   const buf = Buffer.concat(bufs);

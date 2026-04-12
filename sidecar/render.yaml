@@ -3,7 +3,7 @@ services:
     name: plantpilot-sidecar
     runtime: node
     plan: starter
-    buildCommand: npm install && npx esbuild srv/index.ts --bundle --platform=node --target=node20 --outfile=dist/index.mjs --format=esm --external:express --external:cors --external:ws --external:edge-tts --external:google-tts-api
+    buildCommand: npm install && npm run build
     startCommand: node dist/index.mjs
     healthCheckPath: /healthz
     envVars:

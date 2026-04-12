@@ -12,7 +12,7 @@
   "scripts": {
     "start": "node dist/index.mjs",
     "dev": "npx tsx srv/index.ts",
-    "build": "npx esbuild srv/index.ts --bundle --platform=node --target=node20 --outfile=dist/index.mjs --format=esm --external:express --external:cors --external:ws --external:edge-tts --external:google-tts-api",
+    "build": "npx esbuild srv/index.ts --bundle --platform=node --target=node20 --outfile=dist/index.mjs --format=esm --external:express --external:cors --external:ws",
     "import:growroom": "tsx tools/import-growroom-xlsx.ts",
     "parity:growroom": "tsx tools/check-growroom-parity.ts",
     "verify:offline": "tsx tools/verify-offline-readiness.ts",

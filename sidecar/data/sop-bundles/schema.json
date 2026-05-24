@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PlantPilot SOP bundle",
+  "type": "object",
+  "required": ["profile", "version", "irr"],
+  "properties": {
+    "profile": { "type": "string" },
+    "version": { "type": "string" },
+    "media_fill_factor": { "type": "number" },
+    "total_weeks": { "type": "integer" },
+    "whc_start": { "type": "number" },
+    "whc_end": { "type": "number" },
+    "whc_k": { "type": "number" },
+    "min_db_pct_hr": { "type": "number" },
+    "max_db_pct_hr": { "type": "number" },
+    "dryback_table_pct_hr": { "type": "array", "items": { "type": "number" } },
+    "sop_temp_c": { "type": "number" },
+    "tolerances": {
+      "type": "object",
+      "properties": {
+        "p1_ok_ml_day": { "type": "number" },
+        "p2_ok_ml_day": { "type": "number" },
+        "warn_threshold_ml_day": { "type": "number" }
+      }
+    },
+    "pump_min_ml": { "type": "number" },
+    "pump_max_ml": { "type": "number" },
+    "min_p2_interval_min": { "type": "number" },
+    "media": { "type": "object" },
+    "irr": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["runoffPct", "p1_events", "p1_pct", "p1_ml", "p2_events", "p2_pct", "p2_ml"],
+        "properties": {
+          "runoffPct": { "type": "number" },
+          "p1_events": { "type": "integer" },
+          "p1_pct": { "type": "number" },
+          "p1_ml": { "type": "number" },
+          "p2_events": { "type": "integer" },
+          "p2_pct": { "type": "number" },
+          "p2_ml": { "type": "number" },
+          "vwc_floor": { "type": "number" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "profile": "SharkMouseFarms",
+  "version": "2026-05-24.1",
+  "media_fill_factor": 1.22,
+  "total_weeks": 13,
+  "whc_start": 60,
+  "whc_end": 40,
+  "whc_k": 1.5,
+  "min_db_pct_hr": 0.2,
+  "max_db_pct_hr": 5,
+  "sop_temp_c": 24,
+  "tolerances": {
+    "p1_ok_ml_day": 100,
+    "p2_ok_ml_day": 100,
+    "warn_threshold_ml_day": 300
+  },
+  "pump_min_ml": 20,
+  "pump_max_ml": 1500,
+  "min_p2_interval_min": 15,
+  "media": {
+    "coco|1": {
+      "v_media_ml": 4600,
+      "fc_vwc": 60,
+      "vwc_floor": 10
+    },
+    "coco|2": {
+      "v_media_ml": 9200,
+      "fc_vwc": 60,
+      "vwc_floor": 10
+    },
+    "rockwool|1": {
+      "v_media_ml": 4600,
+      "fc_vwc": 60,
+      "vwc_floor": 20
+    }
+  },
+  "irr": {
+    "early veg|1|coco|sharkmousefarms": {
+      "runoffPct": 10,
+      "p1_events": 2,
+      "p1_pct": 5,
+      "p1_ml": 113,
+      "p2_events": 16,
+      "p2_pct": 3,
+      "p2_ml": 68,
+      "vwc_floor": 10
+    },
+    "late veg|1|coco|sharkmousefarms": {
+      "runoffPct": 5,
+      "p1_events": 2,
+      "p1_pct": 5,
+      "p1_ml": 113,
+      "p2_events": 16,
+      "p2_pct": 3,
+      "p2_ml": 68,
+      "vwc_floor": 10
+    },
+    "early bloom|1|coco|sharkmousefarms": {
+      "runoffPct": 0,
+      "p1_events": 4,
+      "p1_pct": 7,
+      "p1_ml": 158,
+      "p2_events": 8,
+      "p2_pct": 3,
+      "p2_ml": 68,
+      "vwc_floor": 10
+    },
+    "mid bloom|1|coco|sharkmousefarms": {
+      "runoffPct": 10,
+      "p1_events": 3,
+      "p1_pct": 7,
+      "p1_ml": 158,
+      "p2_events": 9,
+      "p2_pct": 4,
+      "p2_ml": 90,
+      "vwc_floor": 10
+    },
+    "late bloom|1|coco|sharkmousefarms": {
+      "runoffPct": 5,
+      "p1_events": 4,
+      "p1_pct": 7,
+      "p1_ml": 158,
+      "p2_events": 4,
+      "p2_pct": 6,
+      "p2_ml": 136,
+      "vwc_floor": 10
+    },
+    "flush|1|coco|sharkmousefarms": {
+      "runoffPct": 15,
+      "p1_events": 3,
+      "p1_pct": 15,
+      "p1_ml": 181,
+      "p2_events": 0,
+      "p2_pct": 0,
+      "p2_ml": 0,
+      "vwc_floor": 10
+    },
+    "early veg|2|coco|sharkmousefarms": {
+      "runoffPct": 10,
+      "p1_events": 2,
+      "p1_pct": 5,
+      "p1_ml": 227,
+      "p2_events": 16,
+      "p2_pct": 3,
+      "p2_ml": 136,
+      "vwc_floor": 10
+    },
+    "late veg|2|coco|sharkmousefarms": {
+      "runoffPct": 5,
+      "p1_events": 2,
+      "p1_pct": 5,
+      "p1_ml": 227,
+      "p2_events": 16,
+      "p2_pct": 3,
+      "p2_ml": 136,
+      "vwc_floor": 10
+    },
+    "early bloom|2|coco|sharkmousefarms": {
+      "runoffPct": 0,
+      "p1_events": 4,
+      "p1_pct": 7,
+      "p1_ml": 317,
+      "p2_events": 8,
+      "p2_pct": 3,
+      "p2_ml": 138,
+      "vwc_floor": 10
+    },
+    "mid bloom|2|coco|sharkmousefarms": {
+      "runoffPct": 10,
+      "p1_events": 3,
+      "p1_pct": 7,
+      "p1_ml": 317,
+      "p2_events": 9,
+      "p2_pct": 4,
+      "p2_ml": 184,
+      "vwc_floor": 10
+    },
+    "late bloom|2|coco|sharkmousefarms": {
+      "runoffPct": 5,
+      "p1_events": 4,
+      "p1_pct": 7,
+      "p1_ml": 317,
+      "p2_events": 4,
+      "p2_pct": 6,
+      "p2_ml": 272,
+      "vwc_floor": 10
+    },
+    "flush|2|coco|sharkmousefarms": {
+      "runoffPct": 15,
+      "p1_events": 3,
+      "p1_pct": 15,
+      "p1_ml": 363,
+      "p2_events": 7,
+      "p2_pct": 0,
+      "p2_ml": 0,
+      "vwc_floor": 10
+    },
+    "early veg|1|rockwool|sharkmousefarms": {
+      "runoffPct": 10,
+      "p1_events": 2,
+      "p1_pct": 5,
+      "p1_ml": 101,
+      "p2_events": 16,
+      "p2_pct": 3,
+      "p2_ml": 61,
+      "vwc_floor": 20
+    },
+    "late veg|1|rockwool|sharkmousefarms": {
+      "runoffPct": 5,
+      "p1_events": 2,
+      "p1_pct": 5,
+      "p1_ml": 101,
+      "p2_events": 16,
+      "p2_pct": 3,
+      "p2_ml": 61,
+      "vwc_floor": 20
+    },
+    "early bloom|1|rockwool|sharkmousefarms": {
+      "runoffPct": 0,
+      "p1_events": 4,
+      "p1_pct": 7,
+      "p1_ml": 142,
+      "p2_events": 8,
+      "p2_pct": 3,
+      "p2_ml": 61,
+      "vwc_floor": 20
+    },
+    "mid bloom|1|rockwool|sharkmousefarms": {
+      "runoffPct": 10,
+      "p1_events": 3,
+      "p1_pct": 7,
+      "p1_ml": 142,
+      "p2_events": 9,
+      "p2_pct": 4,
+      "p2_ml": 81,
+      "vwc_floor": 20
+    },
+    "late bloom|1|rockwool|sharkmousefarms": {
+      "runoffPct": 5,
+      "p1_events": 4,
+      "p1_pct": 7,
+      "p1_ml": 142,
+      "p2_events": 4,
+      "p2_pct": 6,
+      "p2_ml": 122,
+      "vwc_floor": 20
+    },
+    "flush|1|rockwool|sharkmousefarms": {
+      "runoffPct": 15,
+      "p1_events": 3,
+      "p1_pct": 15,
+      "p1_ml": 325,
+      "p2_events": 0,
+      "p2_pct": 0,
+      "p2_ml": 0,
+      "vwc_floor": 20
+    }
+  }
+}

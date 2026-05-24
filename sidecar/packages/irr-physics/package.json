@@ -1,0 +1,10 @@
+{
+  "name": "@plantpilot/irr-physics",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

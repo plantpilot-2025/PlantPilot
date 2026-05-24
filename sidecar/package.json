@@ -2,6 +2,9 @@
   "name": "openai-root",
   "type": "module",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
     "cors": "^2.8.5",
     "edge-tts": "^1.0.1",
@@ -16,7 +19,10 @@
     "import:growroom": "tsx tools/import-growroom-xlsx.ts",
     "parity:growroom": "tsx tools/check-growroom-parity.ts",
     "verify:offline": "tsx tools/verify-offline-readiness.ts",
-    "verify:parity-mobile": "tsx tools/verify-mobile-parity.ts"
+    "verify:parity-mobile": "tsx tools/verify-mobile-parity.ts",
+    "verify:irr": "node tools/verify-irr-physics.mjs",
+    "verify:irr-audit": "node tools/verify-irr-audit.mjs",
+    "test:irr": "node --test packages/irr-physics/src/solve.test.ts"
   },
   "version": "1.0.0",
   "description": "",
@@ -27,7 +33,6 @@
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^24.9.2",
-    "esbuild": "^0.25.0",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   }

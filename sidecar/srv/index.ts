@@ -2,6 +2,10 @@ import cors from "cors";
 import { createRequire } from "module";
 import { readFileSync } from "fs";
 import { resolve } from "path";
+import { registerIrrRoutes } from "./irr-routes.ts";
+import { registerEvalRoutes } from "./eval-routes.ts";
+import { registerRunsRoutes } from "./runs-routes.ts";
+import { SOLVER_VERSION } from "../packages/irr-physics/src/index.ts";
 const _require = createRequire(import.meta.url);
 const express = _require("express") as typeof import("express");
 import type { Request, Response } from "express";
@@ -24,7 +28,7 @@ try {
   googleTTSApi = (await import("google-tts-api")).default;
 } catch {}
 
-const VERSION = "v5.0.0-unified";
+const VERSION = "v6.0.0-unified";
 
 const PORT = Number(process.env.PORT || 8789);
 const GAS_URL = (process.env.GAS_DIAG_URL || "").trim();
@@ -111,18 +115,6 @@ function cachePut(k: string, value: any, ttlMs: number) {
 
 type GasFlagRow = [string, string | undefined, number | null, string | undefined];
 type GasFlag = { label: string; reason?: string; score: number; severity: "high" | "medium" | "low"; gate: string };
-
-type IrrSolveResponse = {
-  ok: boolean;
-  base_key_effective: string;
-  cfg_key_effective: string;
-  p1: { events: number; pct_whc_ideal: number; ml_event_ideal: number };
-  p2: { events: number; pct_whc_ideal: number; ml_event_ideal: number };
-  demand_index: number;
-  dbPct_interval: number;
-  coherence: string[];
-  observed: { level: "NONE" | "PARTIAL" | "FULL"; count: number; notes: string[] };
-};
 
 /* ==================== Deterministic Summary ==================== */
 
@@ -793,54 +785,6 @@ async function generateExpandedReport(
   return { text: fallback.prose, generator: fallback.generator };
 }
 
-/* ==================== Irrigation Solver ==================== */
-
-let lastSolve: IrrSolveResponse | null = null;
-
-function solveIrrDraft(payload: Record<string, unknown>): IrrSolveResponse {
-  const photoperiodH = toNumber(payload.photoperiodH, 18);
-  const vpdKpa = toNumber(payload.vpdKpa, toNumber(payload.vpd, 1.2));
-  const dli = toNumber(payload.dli, toNumber(payload.ppfd, 600) * photoperiodH * 0.0036);
-  const eventsPerDay = clamp(Math.round(toNumber(payload.eventsPerDay, 6)), 1, 24);
-  const mlPerEvent = clamp(toNumber(payload.mlPerEvent, 150), 10, 5000);
-  const runoffPct = clamp(toNumber(payload.runoffPct, 12), 0, 50);
-  const drybackPct24h = clamp(toNumber(payload.drybackPct24h, 18), 0, 60);
-  const co2ppm = toNumber(payload.co2, toNumber(payload.co2ppm, 900));
-
-  const vpdFactor = clamp(Math.pow(vpdKpa / 1.2, 0.6), 0.75, 1.35);
-  const dliFactor = clamp(Math.pow(Math.max(1, dli) / 35, 0.5), 0.7, 1.4);
-  const co2Factor = clamp(1 + 0.1 * ((co2ppm - 450) / 750), 1, 1.1);
-  const demandIndex = clamp((vpdFactor + dliFactor + co2Factor) / 3, 0.4, 1.4);
-
-  const etBaseMlDay = 1500;
-  const etPredMlDay = etBaseMlDay * demandIndex;
-  const p1Events = Math.max(1, Math.round(eventsPerDay * 0.45));
-  const p2Events = Math.max(1, eventsPerDay - p1Events);
-  const p1Total = etPredMlDay * 0.55;
-  const p2TotalRaw = etPredMlDay * 0.45;
-  const p2Total = p2TotalRaw / Math.max(0.3, 1 - runoffPct / 100);
-  const p1MlIdeal = clamp(p1Total / p1Events, 20, 1500);
-  const p2MlIdeal = clamp(p2Total / p2Events, 20, 1500);
-
-  const dbPctInterval = clamp(drybackPct24h / Math.max(1, p2Events), 0.5, 20);
-  const coherence: string[] = [];
-  if (runoffPct < 8) coherence.push("Runoff appears low relative to demand. Consider slightly higher P2 volume.");
-  if (drybackPct24h > 30) coherence.push("Dryback appears high. Increase event frequency or per-event volume.");
-  if (drybackPct24h < 8) coherence.push("Dryback appears low. Slightly reduce watering density.");
-
-  return {
-    ok: true,
-    base_key_effective: "phase|container|media|sop_profile",
-    cfg_key_effective: "phase|photoperiod|day|co2_mode",
-    p1: { events: p1Events, pct_whc_ideal: Number((p1MlIdeal / 1000).toFixed(3)), ml_event_ideal: Number(p1MlIdeal.toFixed(1)) },
-    p2: { events: p2Events, pct_whc_ideal: Number((p2MlIdeal / 1000).toFixed(3)), ml_event_ideal: Number(p2MlIdeal.toFixed(1)) },
-    demand_index: Number(demandIndex.toFixed(3)),
-    dbPct_interval: Number(dbPctInterval.toFixed(2)),
-    coherence,
-    observed: { level: coherence.length ? "PARTIAL" : "NONE", count: coherence.length, notes: coherence },
-  };
-}
-
 /* ==================== TTS Providers ==================== */
 
 async function speakWithEdgeTts(text: string, res: Response) {
@@ -944,6 +888,10 @@ const corsOptions = CORS_ORIGIN
 app.use(cors(corsOptions));
 app.use(express.json({ limit: "2mb" }));
 
+registerRunsRoutes(app);
+registerEvalRoutes(app, growroomRules);
+registerIrrRoutes(app);
+
 /* --- Health & Info --- */
 
 app.get("/healthz", (_req: Request, res: Response) => {
@@ -953,6 +901,8 @@ app.get("/healthz", (_req: Request, res: Response) => {
 app.get("/whoami", (_req: Request, res: Response) => {
   res.json({
     version: VERSION,
+    solver_version: SOLVER_VERSION,
+    sop_bundle_version: "2026-05-24.1",
     gasUrlConfigured: Boolean(GAS_URL),
     gasMethod: GAS_METHOD,
     llmEnabled: LLM_ENABLED,
@@ -1081,65 +1031,6 @@ app.post("/coach/stream", async (req: Request, res: Response) => {
   res.end();
 });
 
-/* --- Irrigation Routes --- */
-
-app.post("/sheet/irr/solveDraft", async (req: Request, res: Response) => {
-  try {
-    const body = (req.body || {}) as Record<string, unknown>;
-    const solved = solveIrrDraft(body);
-    lastSolve = solved;
-    res.set("Cache-Control", "no-store");
-    res.json(solved);
-  } catch (error: any) {
-    res.status(400).json({ error: String(error?.message || error) });
-  }
-});
-
-app.post("/sheet/irr/apply", async (req: Request, res: Response) => {
-  try {
-    const body = (req.body || {}) as Record<string, unknown>;
-    const solved = solveIrrDraft(body);
-    lastSolve = solved;
-
-    if (GAS_URL) {
-      try {
-        await fetch(GAS_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...body, apply: 1 }),
-          redirect: "follow",
-        });
-      } catch {}
-    }
-
-    res.set("Cache-Control", "no-store");
-    res.json({ ok: true, applied: true, ...solved });
-  } catch (error: any) {
-    res.status(400).json({ error: String(error?.message || error) });
-  }
-});
-
-app.get("/sheet/reality-delta", async (_req: Request, res: Response) => {
-  try {
-    const solved = lastSolve || solveIrrDraft({});
-    res.set("Cache-Control", "no-store");
-    res.json({
-      ok: true,
-      base_key_effective: solved.base_key_effective,
-      cfg_key_effective: solved.cfg_key_effective,
-      coherence: solved.coherence,
-      observed: solved.observed,
-      p1: solved.p1,
-      p2: solved.p2,
-      demand_index: solved.demand_index,
-      dbPct_interval: solved.dbPct_interval,
-      delta: { user: { delta_p1_ml: 0, delta_p2_ml: 0 } },
-    });
-  } catch (error: any) {
-    res.status(400).json({ error: String(error?.message || error) });
-  }
-});
-
 /* --- TTS Route --- */
 
 app.post("/speak", async (req: Request, res: Response) => {
@@ -1165,9 +1056,9 @@ app.post("/speak", async (req: Request, res: Response) => {
   }
 });
 
-/* --- GAS Proxy --- */
+/* --- GAS Proxy (non-evaluate modes only; evaluate is local via registerEvalRoutes) --- */
 
-app.get("/gas", async (req: Request, res: Response) => {
+async function proxyGasGet(req: Request, res: Response) {
   try {
     if (!GAS_URL) return res.status(400).json({ error: "GAS_DIAG_URL missing" });
     const url = new URL(GAS_URL);
@@ -1182,9 +1073,9 @@ app.get("/gas", async (req: Request, res: Response) => {
   } catch (error: any) {
     res.status(502).json({ error: String(error?.message || error) });
   }
-});
+}
 
-app.post("/gas", async (req: Request, res: Response) => {
+async function proxyGasPost(req: Request, res: Response) {
   try {
     if (!GAS_URL) return res.status(400).json({ error: "GAS_DIAG_URL missing" });
     const controller = new AbortController();
@@ -1203,6 +1094,17 @@ app.post("/gas", async (req: Request, res: Response) => {
   } catch (error: any) {
     res.status(502).json({ error: String(error?.message || error) });
   }
+}
+
+app.get("/gas", (req, res, next) => {
+  const mode = String(req.query.mode || "").toLowerCase();
+  if (mode === "evaluate" || mode === "ping") return next();
+  void proxyGasGet(req, res);
+});
+app.post("/gas", (req, res, next) => {
+  const mode = String(req.query.mode || (req.body as any)?.mode || "").toLowerCase();
+  if (mode === "evaluate") return next();
+  void proxyGasPost(req, res);
 });
 
 /* --- Start --- */

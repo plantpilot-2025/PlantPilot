@@ -32,6 +32,46 @@
       "v_media_ml": 4600,
       "fc_vwc": 60,
       "vwc_floor": 20
+    },
+    "coco|3": {
+      "v_media_ml": 13800,
+      "fc_vwc": 60,
+      "vwc_floor": 10
+    },
+    "coco|5": {
+      "v_media_ml": 23000,
+      "fc_vwc": 60,
+      "vwc_floor": 10
+    },
+    "coco|7": {
+      "v_media_ml": 32200,
+      "fc_vwc": 60,
+      "vwc_floor": 10
+    },
+    "coco|0.5": {
+      "v_media_ml": 2300,
+      "fc_vwc": 60,
+      "vwc_floor": 10
+    },
+    "rockwool|3": {
+      "v_media_ml": 13800,
+      "fc_vwc": 60,
+      "vwc_floor": 20
+    },
+    "rockwool|5": {
+      "v_media_ml": 23000,
+      "fc_vwc": 60,
+      "vwc_floor": 20
+    },
+    "rockwool|7": {
+      "v_media_ml": 32200,
+      "fc_vwc": 60,
+      "vwc_floor": 20
+    },
+    "rockwool|0.5": {
+      "v_media_ml": 2300,
+      "fc_vwc": 60,
+      "vwc_floor": 20
     }
   },
   "irr": {

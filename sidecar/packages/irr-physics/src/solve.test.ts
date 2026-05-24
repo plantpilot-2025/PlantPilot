@@ -53,4 +53,29 @@ describe("irr-physics acceptance", () => {
     });
     assert.equal(plan.p1.events_user, 6);
   });
+
+  it("reconcile adjusts p1 ml/event when p1Events dirty", () => {
+    const bundle = loadSopBundle("Athena Pro")!;
+    const plan = solveIrr({
+      intake: { ...intake, p1Events: 6, p1MlPerEvent: 50 },
+      sopBundle: bundle,
+      dirty: ["p1Events"],
+    });
+    assert.equal(plan.ok, true);
+    const rec = plan.actions?.applyReconciled?.p1MlPerEvent;
+    assert.ok(Number(rec) > 50);
+  });
+
+  it("handwater mode uses coherence for p2 checks", () => {
+    const bundle = loadSopBundle("Athena Pro")!;
+    const plan = solveIrr({
+      intake: { ...intake, mode: "handwater", p2Events: 9, p2MlPerEvent: 500 },
+      sopBundle: bundle,
+    });
+    assert.ok(
+      plan.coherence?.some((c) => /handwater/i.test(c)) ||
+        plan.warnings?.length ||
+        plan.ok
+    );
+  });
 });

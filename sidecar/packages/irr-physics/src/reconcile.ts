@@ -26,10 +26,16 @@ export function applyReconciledFields(
   const p1e = Math.max(1, num(intake.p1Events) ?? 1);
   const p2e = Math.max(0, num(intake.p2Events) ?? 0);
 
-  if (!d.has("p1MlPerEvent") || d.has("p1Events") || d.has("p1Pct")) {
+  if (!d.has("p1MlPerEvent") || d.has("p1Events") || d.has("p1Pct") || d.has("p1IntervalMin")) {
     out.p1MlPerEvent = Math.round(p1RequiredDay / p1e);
   }
-  if (!d.has("p2MlPerEvent") || d.has("p2Events") || d.has("p2IntervalMin") || d.has("runoffPct") || d.has("p2Pct")) {
+  if (
+    !d.has("p2MlPerEvent") ||
+    d.has("p2Events") ||
+    d.has("p2IntervalMin") ||
+    d.has("runoffPct") ||
+    d.has("p2Pct")
+  ) {
     out.p2MlPerEvent = p2e > 0 ? Math.round(p2RequiredEventMl) : 0;
   }
   if (d.has("p1Events") && !d.has("p1IntervalMin") && intake.p1IntervalMin != null) {

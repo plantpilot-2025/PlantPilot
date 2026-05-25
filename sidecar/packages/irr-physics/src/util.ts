@@ -15,8 +15,16 @@ export function profileKey(profile: string): string {
   return norm(profile).replace(/[^a-z0-9]+/g, "");
 }
 
+/** Strip "1 gal" / "5 gal" to bundle key digit (matches media.ts). */
+export function normalizeContainerGal(container?: string): string {
+  const digits = String(container ?? "1").replace(/[^\d.]/g, "");
+  const n = Math.round(Number(digits) || 1);
+  return String(Math.max(1, Math.min(10, n)));
+}
+
 export function irrKey(phase: string, container: string, media: string, profile: string): string {
-  return `${norm(phase)}|${String(container).trim()}|${norm(media)}|${profileKey(profile)}`;
+  const gal = normalizeContainerGal(container);
+  return `${norm(phase)}|${gal}|${norm(media)}|${profileKey(profile)}`;
 }
 
 /** Map stage name to 1-based week index (13-week crop). */

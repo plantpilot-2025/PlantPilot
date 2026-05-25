@@ -10,11 +10,19 @@
     "edge-tts": "^1.0.1",
     "express": "^4.21.2",
     "google-tts-api": "^2.0.2",
-    "xlsx": "^0.18.5"
+    "lucide-react": "^0.542.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.2",
+    "xlsx": "^0.18.5",
+    "zustand": "^5.0.11"
   },
   "scripts": {
     "start": "node dist/index.mjs",
     "dev": "npx tsx srv/index.ts",
+    "dev:web": "vite",
+    "build:web": "vite build",
+    "preview:web": "vite preview",
     "build": "npx esbuild srv/index.ts --bundle --platform=node --target=node20 --outfile=dist/index.mjs --format=esm --external:express --external:cors --external:ws",
     "import:growroom": "tsx tools/import-growroom-xlsx.ts",
     "parity:growroom": "tsx tools/check-growroom-parity.ts",
@@ -33,7 +41,11 @@
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^24.9.2",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.2",
     "tsx": "^4.20.6",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vite": "^7.1.6"
   }
 }

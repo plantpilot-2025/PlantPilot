@@ -66,6 +66,23 @@ describe("irr-physics acceptance", () => {
     assert.ok(Number(rec) > 50);
   });
 
+  it("normalizes 1 gal container for SharkmouseFarms baseline", () => {
+    const bundle = loadSopBundle("SharkmouseFarms");
+    assert.ok(bundle, "sharkmouse bundle");
+    const plan = solveIrr({
+      intake: {
+        stage: "early veg",
+        medium: "coco",
+        container: "1 gal",
+        profile: "SharkmouseFarms",
+        co2: 1200,
+        co2Mode: "co2",
+      },
+      sopBundle: bundle!,
+    });
+    assert.equal(plan.ok, true, plan.error || "expected ok");
+  });
+
   it("handwater mode uses coherence for p2 checks", () => {
     const bundle = loadSopBundle("Athena Pro")!;
     const plan = solveIrr({

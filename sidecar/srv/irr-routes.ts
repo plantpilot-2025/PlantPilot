@@ -5,6 +5,7 @@ import {
   flattenSolvePlan,
   loadSopBundle,
   SOLVER_VERSION,
+  normalizeContainerGal,
   type IntakeIrr,
   type DirtyField,
 } from "../packages/irr-physics/src/index.ts";
@@ -15,7 +16,9 @@ function mapDraftToIntake(body: Record<string, unknown>): IntakeIrr {
   return {
     stage: String(body.stage ?? body.stagePhase ?? "mid bloom"),
     medium: String(body.medium ?? "coco"),
-    container: String(body.container ?? body.containerSize ?? "1"),
+    container: normalizeContainerGal(
+      String(body.container ?? body.containerSize ?? "1"),
+    ),
     profile: String(body.profile ?? "Athena Pro"),
     mode: body.mode != null ? String(body.mode) : undefined,
     photoperiodH: num(body.photoperiodH),
@@ -67,7 +70,7 @@ export function registerIrrRoutes(app: Express) {
       const body = (req.body || {}) as Record<string, unknown>;
       const intake: IntakeIrr =
         body.intake && typeof body.intake === "object"
-          ? (body.intake as IntakeIrr)
+          ? mapDraftToIntake(body.intake as Record<string, unknown>)
           : mapDraftToIntake(body);
       const dirty = Array.isArray(body.dirty) ? (body.dirty as DirtyField[]) : undefined;
 
